@@ -5,7 +5,7 @@
       <span class="app-brand-logo demo">
         <img src="{{ asset('assets/imglogo/logo2.png') }}" alt="Nexora Logo" height="40px">
       </span>
-      <span class="app-brand-text demo menu-text text-dark" style="font-size: 24px;">Nexora</span>
+      <span class="app-brand-text demo menu-text text-dark fw-bolder" style="font-size: 24px;">Nexora</span>
     </a>
   </div>
 
@@ -29,8 +29,8 @@
         <div data-i18n="Product Management">Product Management</div>
       </a>
       <ul class="menu-sub">
-        <li class="menu-item">
-          <a href="" class="menu-link">
+        <li class="menu-item {{ request()->routeIs('item-master.*') ? 'active' : '' }}">
+          <a href="{{ route('item-master.index') }}" class="menu-link">
             <div data-i18n="Item Master">Item Master</div>
           </a>
         </li>

@@ -10,11 +10,13 @@
 .dark-style .menu .app-brand.demo {
   height: 55px;
 }
+
 .brand-divider {
-    width: 100%;
-    height: 2px;
-    background-color: #545454; /* dark theme match */
-    opacity: 0.4;
+  width: 100%;
+  height: 2px;
+  background-color: #b1b1b1;
+  /* dark theme match */
+  opacity: 0.4;
 }
 
 .app-brand-logo.demo {
@@ -41,9 +43,11 @@
 .layout-navbar-fixed .layout-wrapper:not(.layout-without-menu) .layout-page {
   padding-top: 64px !important;
 }
+
 .layout-navbar-fixed .layout-wrapper:not(.layout-horizontal):not(.layout-without-menu) .layout-page {
   padding-top: 72px !important;
 }
+
 /* Navbar page z-index issue solution */
 .content-wrapper .navbar {
   z-index: auto;
@@ -53,36 +57,39 @@
 * Content
 ******************************************************************************/
 
-.demo-blocks > * {
+.demo-blocks>* {
   display: block !important;
 }
 
-.demo-inline-spacing > * {
+.demo-inline-spacing>* {
   margin: 1rem 0.375rem 0 0 !important;
 }
 
 /* ? .demo-vertical-spacing class is used to have vertical margins between elements. To remove margin-top from the first-child, use .demo-only-element class with .demo-vertical-spacing class. For example, we have used this class in forms-input-groups.html file. */
-.demo-vertical-spacing > * {
+.demo-vertical-spacing>* {
   margin-top: 1rem !important;
   margin-bottom: 0 !important;
 }
-.demo-vertical-spacing.demo-only-element > :first-child {
+
+.demo-vertical-spacing.demo-only-element> :first-child {
   margin-top: 0 !important;
 }
 
-.demo-vertical-spacing-lg > * {
+.demo-vertical-spacing-lg>* {
   margin-top: 1.875rem !important;
   margin-bottom: 0 !important;
 }
-.demo-vertical-spacing-lg.demo-only-element > :first-child {
+
+.demo-vertical-spacing-lg.demo-only-element> :first-child {
   margin-top: 0 !important;
 }
 
-.demo-vertical-spacing-xl > * {
+.demo-vertical-spacing-xl>* {
   margin-top: 5rem !important;
   margin-bottom: 0 !important;
 }
-.demo-vertical-spacing-xl.demo-only-element > :first-child {
+
+.demo-vertical-spacing-xl.demo-only-element> :first-child {
   margin-top: 0 !important;
 }
 
@@ -102,6 +109,7 @@
     width: 254px;
     position: relative;
   }
+
   #dropdown-variation-demo .btn-group .text-truncate::after {
     position: absolute;
     top: 45%;
@@ -126,9 +134,11 @@
   flex-direction: column;
   margin-top: 1rem;
 }
+
 .layout-demo-placeholder img {
   width: 900px;
 }
+
 .layout-demo-info {
   text-align: center;
   margin-top: 1rem;
