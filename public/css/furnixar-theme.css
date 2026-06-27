@@ -56,7 +56,7 @@
     .layout-page {
         width: 100%;
     }
-    
+
     .container-xxl {
         padding-left: 1.25rem !important;
         padding-right: 1.25rem !important;
@@ -68,7 +68,7 @@
         padding-left: 1rem !important;
         padding-right: 1rem !important;
     }
-    
+
     .card {
         margin-bottom: 1rem;
     }
@@ -130,4 +130,60 @@
         left: 0;
         transform: translateX(0);
     }
+}
+
+/* ============================================
+   Sub-Menu Dot Indicator — Image-Exact Design
+   (Targets template's built-in ::before circle icon \ea6b)
+   ============================================ */
+
+/* Hide any leftover sub-dot spans (cleanup) */
+.menu-vertical .menu-sub .menu-link .sub-dot {
+    display: none !important;
+}
+
+/* Sub-menu link: proper padding so template's absolute ::before dot has room */
+.bg-menu-theme.menu-vertical .menu-sub > .menu-item > .menu-link {
+    padding-left: 2.4rem !important;
+    padding-top: 0.52rem !important;
+    padding-bottom: 0.52rem !important;
+    position: relative;
+}
+
+/* Template's existing dot icon — inactive (hollow/grey) */
+.bg-menu-theme.menu-vertical .menu-sub > .menu-item > .menu-link::before {
+    content: "\ea6b" !important;
+    font-family: "tabler-icons" !important;
+    position: absolute !important;
+    left: 1.0rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 0.5rem !important;
+    font-weight: 900 !important;
+    color: rgba(160, 160, 185, 0.55) !important;
+    transition: color 0.2s ease, font-size 0.2s ease !important;
+    line-height: 1 !important;
+}
+
+/* Hover state — dot turns purple */
+.bg-menu-theme.menu-vertical .menu-sub > .menu-item > .menu-link:hover::before {
+    color: #7367f0 !important;
+    font-size: 0.6rem !important;
+}
+
+/* Active item — large solid purple dot */
+.bg-menu-theme.menu-vertical .menu-sub > .menu-item.active > .menu-link::before {
+    color: #7367f0 !important;
+    font-size: 0.75rem !important;
+}
+
+/* Active item text color */
+.bg-menu-theme.menu-vertical .menu-sub > .menu-item.active > .menu-link {
+    color: #7367f0 !important;
+    font-weight: 600 !important;
+}
+
+/* Hover item text */
+.bg-menu-theme.menu-vertical .menu-sub > .menu-item > .menu-link:hover {
+    color: #7367f0 !important;
 }
