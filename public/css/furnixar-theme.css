@@ -1,0 +1,133 @@
+/* Clean Layout Responsive Overrides */
+
+/* Remove zoom scaling - use proper sizing instead */
+.card[style*="zoom"] {
+    zoom: 100% !important;
+    transform: none !important;
+}
+
+/* Ensure full width usage */
+.layout-page {
+    width: 100%;
+}
+
+.content-wrapper {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.container-xxl {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Fix content wrapper padding */
+.container-xxl.row {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Card styling */
+.card {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+/* Table responsive */
+.card-datatable {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table {
+    width: 100% !important;
+    min-width: 100%;
+}
+
+
+
+/* Mobile responsive - tablet and below */
+@media (max-width: 991px) {
+    .layout-page {
+        width: 100%;
+    }
+    
+    .container-xxl {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-xxl {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-xxl {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+}
+
+/* Remove extra margins */
+.divhead {
+    margin-bottom: 1rem;
+}
+
+/* Fix header alignment */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Ensure footer uses full width */
+.footer {
+    width: 100%;
+}
+
+/* Fix modal styles */
+.modal-dialog {
+    margin: auto;
+}
+
+/* Content backdrop */
+.content-backdrop {
+    display: none;
+}
+
+/* Fix dropdown menu overflow on right side */
+.dropdown-menu {
+    max-width: calc(100vw - 1rem);
+    overflow-x: hidden;
+}
+
+/* Ensure dropdown doesn't overflow viewport */
+.dropdown-menu-end[data-bs-popper] {
+    right: 0;
+    left: auto;
+    transform: translateX(0);
+}
+
+/* For small screens, adjust dropdown positioning */
+@media (max-width: 576px) {
+    .dropdown-menu-end[data-bs-popper] {
+        right: auto;
+        left: 0;
+        transform: translateX(0);
+    }
+}
