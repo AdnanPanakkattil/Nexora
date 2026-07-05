@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "mission_id": "1",
+      "title": "Book & Earn loyalty streak",
+      "points": 500,
+      "type": "Appointment",
+      "progress": "4/10",
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "mission_id": "2",
+      "title": "Refer Friends & Earn",
+      "points": 100,
+      "type": "Referral",
+      "progress": "5/10",
+      "status": "Active"
+    }
+  ]
+}

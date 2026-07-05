@@ -1,0 +1,44 @@
+body {
+    font-family: "DM Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #f0f0f0; /* Background color of the page */
+  }
+  :root {
+    --background-color: #2b3674;
+    --secondary-color: #ffffff;
+    --border: #949db9;
+    --alert: #ff1818;
+  }
+
+  .forgot-password-box {
+    background-color: var(--secondary-color); /* Blue color for the box */
+    color: var(--background-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .forgot-password-box p {
+    margin-bottom: 40px;
+    color: var(--background-color);
+    font-weight: 400;
+  }
+
+  .reset-button {
+    color: var(--secondary-color);
+    background: var(--background-color);
+    border: none;
+    padding: 12px 17px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 13px;
+    cursor: pointer;
+};

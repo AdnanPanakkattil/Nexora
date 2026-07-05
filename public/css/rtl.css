@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+
+body.rtl{
+    direction: rtl;
+    text-align: right;
+}
+.mb-0 {
+    margin: 30px 70px 0 100px;
+}
+
+.input-with-icon .fa-eye {
+    right: unset !important;
+    left: 25px !important;
+}
+.rtl .input-with-icon .fa-eye-slash {
+    right: unset !important;
+    left: 25px !important;
+}
+.rtl .top-right-icon{
+    right: unset !important;
+    left: 35px !important;
+}
+.rtl .language-options{
+    right: unset !important;
+    left: 0 !important;
+}

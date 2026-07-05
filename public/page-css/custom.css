@@ -1,0 +1,56 @@
+
+.app-brand-logo.demo {
+    align-items: unset !important;
+    justify-content: unset !important;
+    display: flex !important;
+    width: 35px !important;
+    height: 40px !important;
+} 
+
+.hidden-force {
+    display: none !important; /* Force hiding */
+}
+
+.fixed-width {
+    width: 100px; /* Set the desired width */
+    text-align: center; /* Center the content (optional) */
+    position: relative; /* Maintain cell structure */
+}
+
+.ti_sub{
+    font-size: 100px !important;
+}
+.ti-censub{
+    display: flex !important;
+    justify-content: center !important;
+  }
+.view-btn,
+.edit-btn {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view-btn:hover,
+.edit-btn:hover {
+    background-color: #f0f2f5;
+    color: #0d6efd;
+}
+.view-btn,
+.edit-btn {
+    display: inline-block !important;
+    vertical-align: middle;
+}
+
+.action-icons {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px;
+}
+
+

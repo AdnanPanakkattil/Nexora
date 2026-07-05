@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+  "appLoyaltyId": 10,
+  "appUserId": 1452,
+  "affetctedId": 156,
+  "amountPaid": 1307.55,
+  "points": 129.00,
+  "type": "sales_invoice"
+  }
+  ]
+}

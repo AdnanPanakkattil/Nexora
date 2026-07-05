@@ -1,0 +1,55 @@
+
+:root {
+    --background-color: #2b3674;
+    --secondary-color: #ffffff;
+    --border: #949db9;
+    --alert: #ff1818;
+    --primary-color:#7367f0;
+    --subprimary:rgb(40 199 111 / 100%);
+}
+
+
+.scrollable-table {
+    display: block;
+    max-height: 270px;
+    overflow-y: scroll;
+    padding: 0 10px;
+}
+
+.scrollable-table td {
+    padding: 10px;
+}
+.scrollable-table thead th {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+}
+#scrollbar2::-webkit-scrollbar {
+    width: 12px;
+}
+
+#scrollbar2::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#scrollbar2::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: var(--primary-color);
+}
+.Line_card {
+    border: var(--bs-border-width) solid #d1d0d4 !important;
+    border-radius: var(--bs-border-radius);
+    display: flex;
+    align-items: center;
+    margin: 0px 15px 15px 15px;
+    padding-top: 12px;
+    flex-direction: column;
+}
+.custom_scroll{
+    display: flex;
+    justify-content: center;
+}

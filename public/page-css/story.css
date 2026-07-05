@@ -1,0 +1,113 @@
+ .avatar-group .avatar {
+        margin-right: -8px;
+        border: 2px solid #fff;
+    }
+
+    .slider-stage {
+        position: relative;
+        height: 360px;
+        background: #0a0a0a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .slider-stage img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        transition: opacity .2s;
+    }
+
+    .slider-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, .15);
+        border: .5px solid rgba(255, 255, 255, .3);
+        color: #fff;
+        font-size: 22px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+    }
+
+    .slider-nav:hover {
+        background: rgba(255, 255, 255, .28);
+    }
+
+    .slider-prev {
+        left: 12px;
+    }
+
+    .slider-next {
+        right: 12px;
+    }
+
+    .slider-dots {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px 0 4px;
+    }
+
+    .slider-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #ccc;
+        cursor: pointer;
+        transition: all .2s;
+    }
+
+    .slider-dot.active {
+        width: 18px;
+        border-radius: 3px;
+        background: #555;
+    }
+
+    .slider-thumbs {
+        display: flex;
+        gap: 8px;
+        padding: 10px 16px;
+        overflow-x: auto;
+        border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .slider-thumb {
+        width: 54px;
+        height: 54px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        flex-shrink: 0;
+        opacity: .5;
+        border: 2px solid transparent;
+        transition: opacity .15s;
+    }
+
+    .slider-thumb.active {
+        opacity: 1;
+        border-color: #0d6efd;
+    }
+
+    .loader {
+        width: 45px;
+        height: 45px;
+        border: 4px solid #fff;
+        border-top: 4px solid #7367f0;
+        border-radius: 50%;
+        animation: spin .8s linear infinite;
+    }
+
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
+        }
+    }

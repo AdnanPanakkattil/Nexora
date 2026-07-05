@@ -1,0 +1,316 @@
+/* Chart of Accounts — static UI styling */
+
+/* ---------- left tree panel ---------- */
+.coa-tree-panel {
+    border: 1px solid var(--bs-border-color, #e4e6e8);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background: #fff;
+    height: 100%;
+}
+
+.coa-search-wrap {
+    position: relative;
+}
+
+.coa-search-wrap .coa-search-icon {
+    position: absolute;
+    top: 50%;
+    inset-inline-start: 12px;
+    transform: translateY(-50%);
+    color: #a7acb2;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.coa-search-wrap .form-control {
+    padding-inline-start: 36px;
+}
+
+.coa-tree,
+.coa-tree-sub {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.coa-tree {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.coa-tree-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #566a7f;
+    font-size: 0.92rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.coa-tree-link:hover {
+    background: rgba(105, 108, 255, 0.08);
+}
+
+.coa-tree-link.active {
+    background: rgba(105, 108, 255, 0.16);
+    color: #696cff;
+    font-weight: 600;
+}
+
+.coa-toggle {
+    flex: 0 0 16px;
+    width: 16px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #a7acb2;
+    transition: transform 0.15s ease;
+}
+
+.coa-toggle.is-open {
+    transform: rotate(90deg);
+}
+
+html[dir="rtl"] .coa-toggle.is-open {
+    transform: rotate(-90deg);
+}
+
+.coa-folder {
+    flex: 0 0 auto;
+    color: #696cff;
+    font-size: 1rem;
+}
+
+.coa-tree-link.is-leaf .coa-folder {
+    color: #a7acb2;
+}
+
+.coa-tree-name {
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ---------- right detail panel ---------- */
+.coa-detail-panel {
+    border: 1px solid var(--bs-border-color, #e4e6e8);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    background: #fff;
+    min-height: 100%;
+}
+
+.coa-detail-head h4 {
+    font-weight: 600;
+}
+
+.coa-nature-badge {
+    font-size: 0.8rem;
+}
+
+.coa-rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.coa-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 8px;
+    border-bottom: 1px solid #f1f2f4;
+}
+
+.coa-row:hover {
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+/* Row body drills into the account; the ⋮ actions keep the default cursor. */
+.coa-row-icon,
+.coa-row-main,
+.coa-row-nature {
+    cursor: pointer;
+}
+
+.coa-row-icon .ti {
+    font-size: 1.4rem;
+    color: #696cff;
+}
+
+.coa-row-main {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.coa-row-name {
+    font-weight: 600;
+    color: #384551;
+}
+
+.coa-row-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+    font-size: 0.82rem;
+    color: #8592a3;
+}
+
+.coa-row-ar {
+    color: #566a7f;
+}
+
+.coa-row-statement {
+    font-size: 0.7rem;
+}
+
+/* Amount + nature stack on the right of each row (Daftra-style). */
+.coa-row-amount {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-inline-start: auto;
+    margin-inline-end: 4px;
+    line-height: 1.2;
+}
+
+.coa-row-amount-value {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #384551;
+}
+
+.coa-row-nature {
+    flex: 0 0 auto;
+    font-weight: 600;
+    font-size: 0.78rem;
+}
+
+/* Read-only self line shown for a detail/leaf account. */
+.coa-row--self,
+.coa-row--self .coa-row-icon,
+.coa-row--self .coa-row-main,
+.coa-row--self .coa-row-nature {
+    background: transparent;
+    cursor: default;
+}
+
+.coa-row--self {
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+/* Header balance figure (above the nature badge). */
+.coa-detail-amount-value {
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #384551;
+    line-height: 1.2;
+}
+
+.coa-detail-amount .coa-nature-badge {
+    margin-top: 2px;
+}
+
+.coa-row-actions .btn-icon {
+    color: #8592a3;
+}
+
+.coa-add-account {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1rem;
+    color: #696cff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.coa-add-account:hover {
+    color: #5f61e6;
+}
+
+.coa-add-account .ti {
+    font-size: 1.15rem;
+}
+
+/* ---------- custom Main Account searchable dropdown ---------- */
+.coa-select {
+    position: relative;
+}
+
+.coa-select-toggle {
+    width: 100%;
+    text-align: start;
+    background: #fff;
+    cursor: pointer;
+}
+
+.coa-select-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.coa-select-caret {
+    flex: 0 0 auto;
+    color: #a7acb2;
+    transition: transform 0.15s ease;
+}
+
+.coa-select.open .coa-select-caret {
+    transform: rotate(180deg);
+}
+
+.coa-select-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    z-index: 1060; /* above modal body */
+    background: #fff;
+    border: 1px solid var(--bs-border-color, #d9dee3);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 1rem rgba(161, 172, 184, 0.45);
+    padding: 0.5rem;
+}
+
+.coa-select-search-wrap {
+    margin-bottom: 0.5rem;
+}
+
+.coa-select-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.coa-select-option {
+    padding: 7px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #566a7f;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.coa-select-option:hover {
+    background: rgba(105, 108, 255, 0.08);
+}
+
+.coa-select-option.selected {
+    background: rgba(105, 108, 255, 0.16);
+    color: #696cff;
+    font-weight: 600;
+}

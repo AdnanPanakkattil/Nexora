@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+.a4-page {
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 210mm;
+    min-height: 297mm;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+.header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.header h4 {
+    margin: 15px 0px;
+}
+.section-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 20px;
+}
+.section-titlez{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.label-container {
+    width: 25%;
+    font-weight: bold;
+}
+.value-container {
+    width: 75%;
+}
+.editable-text, .editable-area {
+    padding: 4px;
+    display: inline-block;
+    min-width: 10px;
+    color: #000;
+}
+.editable-area {
+    display: block;
+    width: 98%;
+    min-height: 25px;
+}
+.row-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-md-6 {
+    width: 48%;
+    padding: 10px;
+}
+.border-right-print {
+    border-right: 1px solid #ccc;
+}
+.form-group-row {
+    display: flex;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.container-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.inner-table {
+    width: 100%;
+}
+
+
+.left-column {
+    width: 50%;
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+}
+
+.right-column {
+    width: 50%;
+    padding-left: 10px;
+}
+
+
+.editable-text {
+    display: inline-block;
+    padding: 4px;
+    min-width: 100px;
+    color: #000;
+}
+
+td {
+    padding: 5px;
+    vertical-align: top;
+}
+
+.label {
+    font-weight: bold;
+}
+
+
+
+tr {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+
+
+tr:last-child {
+    border-bottom: none;
+}
+
+
+.label {
+    width: 30%;
+    font-weight: bold;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.value {
+    width: 70%;
+    padding: 8px;
+    vertical-align: top;
+}
+
+
+.editable-area, .editable-text {
+    display: inline-block;
+    min-width: 100px;
+    padding: 4px;
+    color: #000;
+}
+
+
+.border-bottom {
+    border-bottom: 2px solid #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,252 @@
+.contentboxt {
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 11px;
+    border: 1px solid #7367f0;
+    padding: 20px 20px;
+    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-top: 50px !important;
+    margin-top: -10px;
+  }
+
+  table td {
+    text-align: center;
+  }
+
+  table th {
+    text-align: center;
+  }
+
+  /* Different colors for each slider segment */
+  #temperature-slider .noUi-connect {
+    background: #ff4c51 !important;
+  }
+
+  #weight-slider .noUi-connect {
+    background: #2f3349 !important;
+  }
+
+  #admission-weight-slider .noUi-connect {
+    background:rgb(146, 180, 66) !important;
+  }
+
+   #birth-weight-slider .noUi-connect {
+    background:rgb(218, 221, 33) !important;
+  }
+
+  #height-slider .noUi-connect {
+    background: #ff9f43 !important;
+  }
+
+  #pulse-slider .noUi-connect {
+    background: #7367f0 !important;
+  }
+
+  #systolic-blood-pressure-slider .noUi-connect {
+    background: #808390 !important;
+  }
+
+  #diastolic-blood-pressure-slider .noUi-connect {
+    background: #28c76f !important;
+  }
+
+  #oxygen-saturation-slider .noUi-connect {
+    background: #00bad1 !important;
+  }
+
+  #respiratory-rate-slider .noUi-connect {
+    background: #1da1f2 !important;
+  }
+
+
+
+  /* Multi-color handles */
+  #temperature-slider .noUi-handle {
+    background: #ff4c51 !important;
+    border-color: #ff4c51 !important;
+  }
+
+  #weight-slider .noUi-handle {
+    background: #2f3349 !important;
+    border-color: #2f3349 !important;
+  }
+
+  #admission-weight-slider .noUi-handle {
+    background:rgb(146, 180, 66) !important;
+    border-color:rgb(146, 180, 66) !important;
+  }
+
+  #birth-weight-slider .noUi-handle {
+    background:rgb(218, 221, 33) !important;
+    border-color:rgb(218, 221, 33) !important;
+  }
+
+  #height-slider .noUi-handle {
+    background: #ff9f43 !important;
+    border-color: #ff9f43 !important;
+  }
+
+  #pulse-slider .noUi-handle {
+    background: #7367f0 !important;
+    border-color: #7367f0 !important;
+  }
+
+  #systolic-blood-pressure-slider .noUi-handle {
+    background: #808390 !important;
+    border-color: #808390 !important;
+  }
+
+  #diastolic-blood-pressure-slider .noUi-handle {
+    background: #28c76f !important;
+    border-color: #28c76f !important;
+  }
+
+  #oxygen-saturation-slider .noUi-handle {
+    background: #00bad1 !important;
+    border-color: #00bad1 !important;
+  }
+
+  #respiratory-rate-slider .noUi-handle {
+    background: #1da1f2 !important;
+    border-color: #1da1f2 !important;
+  }
+
+  /* Change the slider track background */
+  .noUi-target {
+    background: #ddd !important;
+    /* Light gray background */
+  }
+
+  .subbord {
+    border: 1px solid #7367f0 !important;
+    padding: 0px;
+    border-radius: 20px;
+    padding: 12px;
+  }
+
+  .table-striped>tbody>tr:nth-of-type(even)>* {
+    --bs-table-color-type: none !important;
+    --bs-table-bg-type: none !important;
+  }
+
+  .sub-size {
+    font-weight: 800;
+    color: #000 !important;
+  }
+
+  .thheds {
+    padding: 2px 40px !important;
+  }
+
+  .thhed {
+    text-align: left !important;
+    color: #000;
+    font-size: 13px;
+    line-height: 27px;
+    height: 32px;
+    padding: 2px 40px;
+  }
+
+  .thesub {
+    border-bottom: 2px dotted #e7e7e7 !important;
+  }
+
+  .thsubse {
+    border-right: 2px solid #fff !important;
+    color: #000;
+    background: #e9e7fd !important;
+  }
+
+  .thsub {
+    height: 50px;
+    font-weight: 800;
+    border-bottom: none !important;
+    text-transform: none;
+    border: none !important;
+    color: #fff !important;
+    text-align: left;
+    line-height: 30px;
+    font-size: 16px;
+    border-right: 2px solid #fff !important;
+  }
+
+  .wid-sub {
+    width: 10%;
+  }
+
+  .header-row {
+    background-color: #7367f0;
+    text-align: center;
+  }
+
+  .statusrhead {
+    background: #e8eef4;
+    text-align: left;
+  }
+
+  .titleh5,
+  .titleh53 {
+    color: #000;
+    font-weight: bold;
+  }
+
+  #tblBenefits {
+    width: 100%;
+  }
+
+  .allowed {
+    text-align: center;
+    background-color: #d3f7e6 !important;
+    border-right: 2px solid #fff !important;
+  }
+
+  .used {
+    background-color: #e9e7fd !important;
+    text-align: center;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+
+  .badge-center {
+    padding: 3px;
+    line-height: 1.375;
+    height: 50px !important;
+    width: 50px !important;
+    font-size: 30px;
+  }
+
+  .badge-center i {
+    font-size: 27px;
+  }
+
+  .rowright h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .rowright p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .rowright {
+    padding: 0 1px !important;
+    margin: 0 0 !important;
+    display: flex;
+    align-items: center;
+    min-height: 31px;
+    border: 0 !important;
+    box-shadow: none;
+    border-bottom: 1px dotted #e8e7e7 !important;
+    line-height: 30px !important;
+  }
+
+  .modal-dialog {
+    max-width: 1500px !important;
+  }

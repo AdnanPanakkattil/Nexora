@@ -1,0 +1,79 @@
+:root {
+    --background-color: #2b3674;
+    --secondary-color: #ffffff;
+    --border: #949db9;
+    --alert: #ff1818;
+}
+.Nameinput {
+    border: solid 1px var(--background-color) !important;
+    border-radius: 12px !important;
+}
+.headz {
+    font-weight: 600;
+    color: var(--background-color);
+}
+.border {
+    border-radius: 25px !important;
+}
+.textz {
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--background-color);
+}
+
+.labe {
+    font-size: 15px !important;
+    font-weight: 600;
+    margin-bottom: 10px !important;
+    color: var(--background-color) !important;
+}
+.Nameinput::placeholder {
+    font-size: 13px;
+}
+.borderz {
+    gap: 9px !important;
+}
+
+.labe::after {
+    content: "*";
+    color: var(--alert);
+    padding-left: 2px;
+}
+.labe {
+    font-size: 15px !important;
+    font-weight: 600;
+    margin-bottom: 10px !important;
+    color: var(--background-color) !important;
+}
+.fontzs{
+  font-size: 30px;
+    font-weight: 600;
+    color: var(--background-color);
+    margin-left: 40px;
+}
+.gapz{
+  gap: 35px;
+}
+.fontz {
+    font-size: 18px;
+    font-weight: bold;
+    color: #7367f0;
+    margin-left: 40px;
+}
+.just {
+    display: flex !important;
+    justify-content: end !important;
+}
+.tabcol {
+    background-color: #7367f0 !important;
+    color: #fff !important;
+    box-shadow: 0 0.125rem 0.375rem 0 rgba(115, 103, 240, 0.3) !important;
+}
+.tabnocol {
+    background-color: rgba(47, 43, 61, 0.06) !important;
+    color: #444050 !important;
+    box-shadow: unset !important;
+}
+.gap {
+    margin: 25px !important;
+}

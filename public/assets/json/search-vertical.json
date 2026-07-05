@@ -1,0 +1,121 @@
+{
+  "pages": [
+    {
+      "name": "Medical Records",
+      "icon": "ti-home",
+      "url": "/medicalrecords"
+    },
+    {
+      "name": "Patient Registration",
+      "icon": "ti-smart-home",
+      "url": "/patient"
+    },
+    {
+      "name": "Patient Lists",
+      "icon": "ti-layout-sidebar",
+      "url": "/patients-lists"
+    },
+    {
+      "name": "Eligibility Check",
+      "icon": "ti-layout-sidebar",
+      "url": "/insurance-eligibility-check"
+    },
+    {
+      "name": "Insurance Payers",
+      "icon": "ti-layout-sidebar",
+      "url": "/insurance-payers"
+    },
+    {
+      "name": "Individual Service",
+      "icon": "ti-layout-sidebar",
+      "url": "/individual"
+    },
+    {
+      "name": "Common Service",
+      "icon": "ti-layout-sidebar",
+      "url": "/common"
+    },
+    {
+      "name": "Template Service",
+      "icon": "ti-layout-sidebar",
+      "url": "/group"
+    },
+    {
+      "name": "Insurance Service",
+      "icon": "ti-layout-sidebar",
+      "url": "/service-insurance"
+    },
+    {
+      "name": "Xray Service",
+      "icon": "ti-layout-sidebar",
+      "url": "xray-service"
+    },
+    {
+      "name": "New Branch",
+      "icon": "ti-mail",
+      "url": "/branch"
+    },
+    {
+      "name": "Activity Log",
+      "icon": "ti-messages",
+      "url": "/activitylog"
+    },
+    {
+      "name": "Appointment",
+      "icon": "ti-calendar",
+      "url": "/appointment"
+    },
+    {
+      "name": "Appointment Report",
+      "icon": "ti-layout-kanban",
+      "url": "/appointment-report"
+    },
+    {
+      "name": "Users",
+      "icon": "ti-smart-home",
+      "url": "/user"
+    },
+    {
+      "name": "Doctor Registration",
+      "icon": "ti-building-factory-2",
+      "url": "/doctors"
+    },
+    {
+      "name": "Nurse Registration",
+      "icon": "ti-list-details",
+      "url": "/user-nurse"
+    },
+    {
+      "name": "Employee Registration",
+      "icon": "ti-plus",
+      "url": "/user-receptionist"
+    },
+    {
+      "name": "Super Admin Registration",
+      "icon": "ti-list",
+      "url": "/user-superadmin"
+    },
+    {
+      "name": "Pharmacist Registration",
+      "icon": "ti-list",
+      "url": "/user-pharmacy"
+    },
+    {
+      "name": "Laboratory Registration",
+      "icon": "ti-list-check",
+      "url": "/user-laboratory"
+    },
+    {
+      "name": "Radiology Registration",
+      "icon": "ti-user",
+      "url": "/user-radiology"
+    },
+    {
+      "name": "Close Time",
+      "icon": "ti-list-details",
+      "url": "/user-close-time"
+    }
+    
+  ]
+  
+}
