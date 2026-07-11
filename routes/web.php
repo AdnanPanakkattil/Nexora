@@ -6,7 +6,7 @@ use Modules\Backend\Http\Controllers\BackendController;
 
 // Route::prefix('admin')->group(function () {
 
-    Route::get('/', [HomeController::class, 'index'])
-        ->name('dashboard');
+Route::get('/dashboard', [HomeController::class, 'index'])
+    ->name('dashboard');
 
 // });

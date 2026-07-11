@@ -16,20 +16,27 @@
     <!-- Dashboard -->
     <li class="menu-header small text-uppercase"><span class="menu-header-text">dashboard</span></li>
     <li class="menu-item">
-      <a href="" class="menu-link">
+      <a href="{{ route('dashboard') }}" class="menu-link">
         <i class="menu-icon ti ti-smart-home"></i>
         <div data-i18n="Dashboards">Dashboards</div>
       </a>
     </li>
 
     <!-- Product Management -->
-    <li class="menu-item">
+    <li class="menu-item" id="product_management_main_menu">
     <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon ti ti-shopping-bag"></i>
         <div data-i18n="Product Management">Product Management</div>
     </a>
 
     <ul class="menu-sub">
+
+        <!-- Products -->
+<li class="menu-item" id="product_management_sub_menu">
+    <a href="{{ route('item-master') }}" class="menu-link">
+        <div data-i18n="Products">Products</div>
+    </a>
+</li>
 
         <!-- Category -->
         <li class="menu-item">
@@ -73,12 +80,7 @@
             </a>
         </li>
 
-        <!-- Products -->
-        <li class="menu-item {{ request()->routeIs('item-master.*') ? 'active' : '' }}">
-            <a href="" class="menu-link">
-                <div data-i18n="Products">Products</div>
-            </a>
-        </li>
+
 
         <!-- Product Variants -->
         <li class="menu-item">

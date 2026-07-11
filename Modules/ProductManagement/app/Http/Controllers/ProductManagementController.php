@@ -12,7 +12,7 @@ class ProductManagementController extends Controller
      */
     public function index()
     {
-        return view('productmanagement::index');
+        return view('productmanagement::item-master');
     }
 
     /**
@@ -20,7 +20,7 @@ class ProductManagementController extends Controller
      */
     public function create()
     {
-        return view('productmanagement::create');
+        return view('productmanagement::item-master-add');
     }
 
     /**
