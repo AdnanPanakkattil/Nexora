@@ -416,10 +416,9 @@
         </li>
         <!--/ User -->
 
-        <!-- Settings -->  
         <li class="nav-item">
           <a id="topbar-settings-btn" class="nav-link btn btn-text-secondary btn-icon rounded-pill"
-            href="javascript:void(0);" title="Settings">
+            href="javascript:void(0);" title="Settings" onclick="document.querySelector('.template-customizer-open-btn').click();">
             <i class="ti ti-settings ti-md"></i>
           </a>
         </li>

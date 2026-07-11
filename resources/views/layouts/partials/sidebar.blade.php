@@ -3,7 +3,7 @@
   <div class="app-brand demo py-3">
     <a href="index.html" class="app-brand-link">
       <span class="app-brand-logo demo">
-        <img src="{{ asset('assets/imglogo/logo2.png') }}" alt="Nexora Logo" height="40px">
+        <img src="{{ asset('assets/imglogo/logo-sm.png') }}" alt="Nexora Logo" height="20px">
       </span>
       <span class="app-brand-text demo menu-text text-dark fw-bolder" style="font-size: 24px;">Nexora</span>
     </a>
