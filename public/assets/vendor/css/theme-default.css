@@ -1618,36 +1618,36 @@ li.ui-timepicker-selected,
 
 .bg-navbar-theme {
   background-color: rgba(255, 255, 255, 0.88) !important;
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-navbar-theme .navbar-brand,
 .bg-navbar-theme .navbar-brand a {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-navbar-theme .navbar-brand:hover,
 .bg-navbar-theme .navbar-brand:focus,
 .bg-navbar-theme .navbar-brand a:hover,
 .bg-navbar-theme .navbar-brand a:focus {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-navbar-theme .navbar-search-wrapper .navbar-search-icon,
 .bg-navbar-theme .navbar-search-wrapper .search-input {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-navbar-theme .search-input-wrapper .search-input,
 .bg-navbar-theme .search-input-wrapper .search-toggler {
   background-color: #fff !important;
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-navbar-theme .navbar-nav>.nav-link,
 .bg-navbar-theme .navbar-nav>.nav-item>.nav-link,
 .bg-navbar-theme .navbar-nav>.nav>.nav-item>.nav-link {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-navbar-theme .navbar-nav>.nav-link:hover,
@@ -1656,7 +1656,7 @@ li.ui-timepicker-selected,
 .bg-navbar-theme .navbar-nav>.nav-item>.nav-link:focus,
 .bg-navbar-theme .navbar-nav>.nav>.nav-item>.nav-link:hover,
 .bg-navbar-theme .navbar-nav>.nav>.nav-item>.nav-link:focus {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-navbar-theme .navbar-nav>.nav-link.disabled,
@@ -1669,11 +1669,11 @@ li.ui-timepicker-selected,
 .bg-navbar-theme .navbar-nav .active>.nav-link,
 .bg-navbar-theme .navbar-nav .nav-link.show,
 .bg-navbar-theme .navbar-nav .nav-link.active {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-navbar-theme .navbar-toggler {
-  color: #444050;
+  color: #7e8b98;
   border-color: rgba(68, 64, 80, 0.075);
 }
 
@@ -1682,16 +1682,16 @@ li.ui-timepicker-selected,
 }
 
 .bg-navbar-theme .navbar-text {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-navbar-theme .navbar-text a {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-navbar-theme .navbar-text a:hover,
 .bg-navbar-theme .navbar-text a:focus {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-navbar-theme hr {
@@ -1724,7 +1724,7 @@ li.ui-timepicker-selected,
 
 .bg-menu-theme {
   background-color: #fff !important;
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-menu-theme.menu-horizontal {
@@ -1734,7 +1734,7 @@ li.ui-timepicker-selected,
 .bg-menu-theme .menu-link,
 .bg-menu-theme .menu-horizontal-prev,
 .bg-menu-theme .menu-horizontal-next {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-menu-theme .menu-link:hover,
@@ -1743,17 +1743,17 @@ li.ui-timepicker-selected,
 .bg-menu-theme .menu-horizontal-prev:focus,
 .bg-menu-theme .menu-horizontal-next:hover,
 .bg-menu-theme .menu-horizontal-next:focus {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-menu-theme .menu-link.active,
 .bg-menu-theme .menu-horizontal-prev.active,
 .bg-menu-theme .menu-horizontal-next.active {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-menu-theme .menu-toggle::after {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-menu-theme .menu-item.disabled .menu-link,
@@ -1764,7 +1764,7 @@ li.ui-timepicker-selected,
 
 .bg-menu-theme .menu-item.open:not(.menu-item-closing)>.menu-toggle,
 .bg-menu-theme .menu-item.active>.menu-link {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-menu-theme.menu-vertical .menu-item.active>.menu-link:not(.menu-toggle) {
@@ -1808,7 +1808,7 @@ li.ui-timepicker-selected,
 }
 
 .bg-menu-theme .menu-text {
-  color: #444050;
+  color: #7e8b98;
 }
 
 .bg-menu-theme .menu-header {

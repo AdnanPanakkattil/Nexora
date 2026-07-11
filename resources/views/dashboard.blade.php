@@ -65,6 +65,35 @@
             </div>
         </div>
     </div>
+    <div class="col-xl-5" style="zoom: 90%;">
+        <div class="card">
+            <div class="row align-items-end">
+                <div class="col-7">
+                    <div class="card-body text-nowrap pb-11">
+                        <h4 class="card-title mb-0 pb-3">welcomeName</h4>
+                        <h5 class="card-title  mb-5 mt-1">welcome</h5>
+                        <p class="text-primary mb-1">welcome</p>
+                        <div class="d-flex align-items-center mt-2">
+                            <div class="badge rounded bg-label-primary me-6 p-4">
+                                <i class="ti ti-calendar-event ti-lg" style="font-size: 30px !important;"></i>
+                            </div>
+                            <div class="card-info d-flex align-items-center">
+                                <h5 class="mb-0 me-2">today</h5>
+                                <h3 class="mb-0">225</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5 text-center">
+                    <img
+                        src="../../assets/img/illustrations/Employee1.png"
+                        height="250"
+                        width="250"
+                        alt="Employer Dashboard" />
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
