@@ -3,9 +3,7 @@
 namespace Modules\ProductManagement\Providers;
 
 use Nwidart\Modules\Support\ModuleServiceProvider;
-// use Illuminate\Console\Scheduling\Schedule;
-use Modules\ProductManagement\Providers\EventServiceProvider;
-use Modules\ProductManagement\Providers\RouteServiceProvider;
+use Illuminate\Console\Scheduling\Schedule;
 
 class ProductManagementServiceProvider extends ModuleServiceProvider
 {
@@ -38,7 +36,7 @@ class ProductManagementServiceProvider extends ModuleServiceProvider
 
     /**
      * Define module schedules.
-     *
+     * 
      * @param $schedule
      */
     // protected function configureSchedules(Schedule $schedule): void

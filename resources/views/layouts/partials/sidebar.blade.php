@@ -24,43 +24,134 @@
 
     <!-- Product Management -->
     <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
+    <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon ti ti-shopping-bag"></i>
         <div data-i18n="Product Management">Product Management</div>
-      </a>
-      <ul class="menu-sub">
+    </a>
+
+    <ul class="menu-sub">
+
+        <!-- Category -->
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <div data-i18n="Categories">Categories</div>
+            </a>
+        </li>
+
+        <!-- Sub Category -->
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <div data-i18n="Sub Categories">Sub Categories</div>
+            </a>
+        </li>
+
+        <!-- Child Category -->
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <div data-i18n="Child Categories">Child Categories</div>
+            </a>
+        </li>
+
+        <!-- Brands -->
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <div data-i18n="Brands">Brands</div>
+            </a>
+        </li>
+
+        <!-- Attributes -->
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <div data-i18n="Attributes">Attributes</div>
+            </a>
+        </li>
+
+        <!-- Attribute Values -->
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <div data-i18n="Attribute Values">Attribute Values</div>
+            </a>
+        </li>
+
+        <!-- Products -->
         <li class="menu-item {{ request()->routeIs('item-master.*') ? 'active' : '' }}">
-          <a href="{{ route('item-master.index') }}" class="menu-link">
-            <div data-i18n="Item Master">Item Master</div>
-          </a>
+            <a href="" class="menu-link">
+                <div data-i18n="Products">Products</div>
+            </a>
         </li>
+
+        <!-- Product Variants -->
         <li class="menu-item">
-          <a href="" class="menu-link">
-            <div data-i18n="Sub Category">Sub Category</div>
-          </a>
+            <a href="" class="menu-link">
+                <div data-i18n="Product Variants">Product Variants</div>
+            </a>
         </li>
+
+        <!-- Product Images -->
         <li class="menu-item">
-          <a href="" class="menu-link">
-            <div data-i18n="Brand">Brand</div>
-          </a>
+            <a href="" class="menu-link">
+                <div data-i18n="Product Images">Product Images</div>
+            </a>
         </li>
+
+        <!-- Specifications -->
         <li class="menu-item">
-          <a href="" class="menu-link">
-            <div data-i18n="Product Attributes">Product Attributes</div>
-          </a>
+            <a href="" class="menu-link">
+                <div data-i18n="Specifications">Specifications</div>
+            </a>
         </li>
+
+        <!-- Tags -->
         <li class="menu-item">
-          <a href="" class="menu-link">
-            <div data-i18n="Product Variants">Product Variants</div>
-          </a>
+            <a href="" class="menu-link">
+                <div data-i18n="Product Tags">Product Tags</div>
+            </a>
         </li>
+
+        <!-- Labels -->
         <li class="menu-item">
-          <a href="" class="menu-link">
-            <div data-i18n="Product Images">Product Images</div>
-          </a>
+            <a href="" class="menu-link">
+                <div data-i18n="Product Labels">Product Labels</div>
+            </a>
         </li>
-      </ul>
-    </li>
+
+        <!-- Reviews -->
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <div data-i18n="Reviews">Reviews</div>
+            </a>
+        </li>
+
+        <!-- Questions -->
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <div data-i18n="Questions & Answers">Questions & Answers</div>
+            </a>
+        </li>
+
+        <!-- SEO -->
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <div data-i18n="SEO">SEO</div>
+            </a>
+        </li>
+
+        <!-- Import -->
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <div data-i18n="Import Products">Import Products</div>
+            </a>
+        </li>
+
+        <!-- Export -->
+        <li class="menu-item">
+            <a href="" class="menu-link">
+                <div data-i18n="Export Products">Export Products</div>
+            </a>
+        </li>
+
+    </ul>
+</li>
 
     <!-- Purchase Management -->
     <li class="menu-item">
