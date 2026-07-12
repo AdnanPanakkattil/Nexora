@@ -47,26 +47,14 @@
         <!--/ Language -->
 
         <!-- Style Switcher -->
-        <li class="nav-item dropdown-style-switcher dropdown">
+        <li class="nav-item">
           <a
-            class="nav-link btn btn-text-secondary btn-icon rounded-pill dropdown-toggle hide-arrow"
+            class="nav-link btn btn-text-secondary btn-icon rounded-pill"
             href="javascript:void(0);"
-            data-bs-toggle="dropdown">
+            id="style-switcher-btn"
+            title="Toggle Light/Dark Mode">
             <i class="ti ti-md"></i>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
-            <li>
-              <a class="dropdown-item" href="javascript:void(0);" data-theme="light">
-                <span class="align-middle"><i class="ti ti-sun ti-md me-3"></i>Light</span>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="javascript:void(0);" data-theme="dark">
-                <span class="align-middle"><i class="ti ti-moon-stars ti-md me-3"></i>Dark</span>
-              </a>
-            </li>
-           
-          </ul>
         </li>
         <!-- / Style Switcher-->
 
@@ -400,9 +388,16 @@
             <li>
               <a class="dropdown-item" href="pages-profile-user.html">
                 <i class="ti ti-user me-3 ti-md"></i>
-                <span class="align-middle">Profile</span>
+                <span class="align-middle">View Profile</span>
               </a>
             </li>
+            <li>
+              <a class="dropdown-item" href="pages-profile-user.html">
+                <i class="ti ti-user me-3 ti-md"></i>
+                <span class="align-middle">My Tasks</span>
+              </a>
+            </li>
+          
             <li>
               <div class="dropdown-divider my-1"></div>
             </li>

@@ -122,6 +122,7 @@ if (document.getElementById('layout-menu')) {
 
   //Style Switcher (Light/Dark/System Mode)
   let styleSwitcher = document.querySelector('.dropdown-style-switcher');
+  let styleSwitcherBtn = document.getElementById('style-switcher-btn');
 
   // Active class on style switcher dropdown items
   const activeStyle = document.documentElement.getAttribute('data-style');
@@ -176,6 +177,103 @@ if (document.getElementById('layout-menu')) {
         fallbackPlacements: ['bottom']
       });
     }
+  }
+
+  // Handle single toggle button if present
+  if (styleSwitcherBtn) {
+    const icon = styleSwitcherBtn.querySelector('i');
+    
+    // Set initial icon and tooltip based on stored style
+    if (storedStyle === 'dark') {
+      icon.classList.add('ti-moon-stars');
+      new bootstrap.Tooltip(styleSwitcherBtn, {
+        title: 'Dark Mode',
+        fallbackPlacements: ['bottom']
+      });
+    } else {
+      icon.classList.add('ti-sun');
+      new bootstrap.Tooltip(styleSwitcherBtn, {
+        title: 'Light Mode',
+        fallbackPlacements: ['bottom']
+      });
+    }
+
+    styleSwitcherBtn.addEventListener('click', function () {
+      let currentStyle = document.documentElement.getAttribute('data-style') || storedStyle;
+      let newStyle = (currentStyle === 'dark') ? 'light' : 'dark';
+      let isDark = (newStyle === 'dark');
+
+      // Update HTML classes & attributes
+      const htmlEl = document.documentElement;
+      if (isDark) {
+        htmlEl.classList.remove('light-style');
+        htmlEl.classList.add('dark-style');
+        htmlEl.setAttribute('data-style', 'dark');
+      } else {
+        htmlEl.classList.remove('dark-style');
+        htmlEl.classList.add('light-style');
+        htmlEl.setAttribute('data-style', 'light');
+      }
+
+      // Update core stylesheet
+      const coreCssLink = document.querySelector('.template-customizer-core-css');
+      if (coreCssLink) {
+        let coreHref = coreCssLink.getAttribute('href');
+        if (isDark) {
+          if (!coreHref.includes('core-dark.css')) {
+            coreCssLink.setAttribute('href', coreHref.replace('core.css', 'core-dark.css'));
+          }
+        } else {
+          coreCssLink.setAttribute('href', coreHref.replace('core-dark.css', 'core.css'));
+        }
+      }
+
+      // Update theme stylesheet
+      const themeCssLink = document.querySelector('.template-customizer-theme-css');
+      if (themeCssLink) {
+        let themeHref = themeCssLink.getAttribute('href');
+        if (isDark) {
+          if (!themeHref.includes('-dark.css')) {
+            themeCssLink.setAttribute('href', themeHref.replace('.css', '-dark.css'));
+          }
+        } else {
+          themeCssLink.setAttribute('href', themeHref.replace('-dark.css', '.css'));
+        }
+      }
+
+      // Update localStorage so state persists
+      localStorage.setItem('templateCustomizer-' + templateName + '--Style', newStyle);
+
+      // Sync window.templateCustomizer settings if present
+      if (window.templateCustomizer) {
+        window.templateCustomizer.settings.style = newStyle;
+        window.templateCustomizer.settings.stylesOpt = newStyle;
+      }
+
+      // Switch Images/Assets if switchImage function is available
+      if (typeof switchImage === 'function') {
+        switchImage(newStyle);
+      }
+
+      // Update button icon & tooltip
+      if (isDark) {
+        icon.className = 'ti ti-moon-stars ti-md';
+        styleSwitcherBtn.setAttribute('title', 'Dark Mode');
+      } else {
+        icon.className = 'ti ti-sun ti-md';
+        styleSwitcherBtn.setAttribute('title', 'Light Mode');
+      }
+
+      // Update tooltip instance
+      let tooltip = bootstrap.Tooltip.getInstance(styleSwitcherBtn);
+      if (tooltip) {
+        tooltip.dispose();
+      }
+      new bootstrap.Tooltip(styleSwitcherBtn, {
+        title: isDark ? 'Dark Mode' : 'Light Mode',
+        fallbackPlacements: ['bottom']
+      });
+    });
   }
 
   // Run switchImage function based on the stored style
@@ -663,6 +761,48 @@ if (typeof $ !== 'undefined') {
 
       searchInput.on('keyup', function () {
         psSearch.update();
+      });
+    }
+
+    // Fullscreen Toggle
+    var fullscreenBtn = $('#fullscreen-btn');
+    if (fullscreenBtn.length) {
+      fullscreenBtn.on('click', function () {
+        var icon = $(this).find('i');
+        if (!document.fullscreenElement &&
+            !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
+          if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+          } else if (document.documentElement.msRequestFullscreen) {
+            document.documentElement.msRequestFullscreen();
+          } else if (document.documentElement.mozRequestFullScreen) {
+            document.documentElement.mozRequestFullScreen();
+          } else if (document.documentElement.webkitRequestFullscreen) {
+            document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+          }
+          icon.removeClass('ti-maximize').addClass('ti-minimize');
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          }
+          icon.removeClass('ti-minimize').addClass('ti-maximize');
+        }
+      });
+
+      // Handle screen exit using ESC or browser default options
+      $(document).on('fullscreenchange webkitfullscreenchange mozfullscreenchange MSFullscreenChange', function () {
+        var icon = fullscreenBtn.find('i');
+        if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+          icon.removeClass('ti-maximize').addClass('ti-minimize');
+        } else {
+          icon.removeClass('ti-minimize').addClass('ti-maximize');
+        }
       });
     }
   });
