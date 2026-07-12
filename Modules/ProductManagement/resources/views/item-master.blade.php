@@ -101,5 +101,5 @@
 
 @endsection
 @push('scripts')
-<script src="{{ asset('page-js/item-master.js') }}"></script>
+<script src="{{ asset('page-js/productManagement/item-master.js') }}"></script>
 @endpush

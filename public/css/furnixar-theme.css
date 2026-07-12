@@ -1,0 +1,85 @@
+/* ============================================
+   Hide Template Customizer Floating Button
+   ============================================ */
+.template-customizer-open-btn {
+  display: none !important;
+}
+
+/* ============================================
+   Sidebar Menu Toggle: + / - icons
+   ============================================ */
+
+/* Collapsed state: show + icon */
+.menu-vertical .menu-toggle::after {
+  content: "+" !important;
+  font-family: inherit !important;
+  font-size: 1.125rem;
+  font-weight: 600;
+  transform: translateY(-50%) rotate(0deg) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Expanded (open) state: show - icon */
+.menu-vertical .menu-item.open:not(.menu-item-closing)>.menu-toggle::after {
+  content: "−" !important;
+  /* Using proper minus sign (U+2212) */
+  font-family: inherit !important;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transform: translateY(-50%) rotate(0deg) !important;
+}
+
+/* ============================================
+   Subtle Template Customizer Scrollbar
+   ============================================ */
+/* Firefox */
+[class*="template-customizer"] {
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(150, 150, 150, 0.2) transparent !important;
+}
+
+/* Chrome, Safari, Edge */
+[class*="template-customizer"]::-webkit-scrollbar,
+[class*="template-customizer"] *::-webkit-scrollbar {
+  width: 4px !important;
+  height: 4px !important;
+}
+
+[class*="template-customizer"]::-webkit-scrollbar-track,
+[class*="template-customizer"] *::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+[class*="template-customizer"]::-webkit-scrollbar-thumb,
+[class*="template-customizer"] *::-webkit-scrollbar-thumb {
+  background-color: rgba(150, 150, 150, 0.2) !important;
+  border-radius: 10px !important;
+  transition: background-color 0.2s ease !important;
+}
+
+[class*="template-customizer"]::-webkit-scrollbar-thumb:hover,
+[class*="template-customizer"] *::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(150, 150, 150, 0.45) !important;
+}
+
+/* ============================================
+   Topbar Settings Icon Spin Animation
+   ============================================ */
+@keyframes spin-gear {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#topbar-settings-btn i {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+#topbar-settings-btn i {
+  animation: spin-gear 2s linear infinite;
+}
