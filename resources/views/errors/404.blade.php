@@ -7,7 +7,7 @@
     <meta name="description" content="The page you are looking for could not be found." />
 
     <!-- Lottie Web Player -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
+    <script src="{{ 'https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js' }}"></script>
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,7 +31,7 @@
 <body>
 
     <lottie-player
-        src="{{ asset('assets/animations/404.json') }}"
+        src="https://assets3.lottiefiles.com/packages/lf20_suhe7qtm.json"
         background="transparent"
         speed="1"
         loop
