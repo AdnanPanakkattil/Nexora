@@ -15,6 +15,11 @@ class AuthUserController extends Controller
         return view('authuser::index');
     }
 
+    public function superAdmin()
+    {
+        return view('authuser::super-admin');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

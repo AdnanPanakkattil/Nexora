@@ -107,7 +107,7 @@
   </div>
   <div class="offcanvas-body">
     <div class="d-flex flex-column gap-2 w-65 mx-auto">
-      <a href="#" class="btn btn-primary text-center">Super Admin</a>
+      <a href="{{ route('authuser.super-admin') }}" class="btn btn-primary text-center">Super Admin</a>
       <a href="#" class="btn btn-primary text-center">Manager</a>
       <a href="#" class="btn btn-primary text-center">Inventory Manager</a>
       <a href="#" class="btn btn-primary text-center">Sales Manager</a>
