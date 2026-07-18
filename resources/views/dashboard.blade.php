@@ -41,9 +41,9 @@
             <div class="row align-items-end">
                 <div class="col-7">
                     <div class="card-body text-nowrap pb-11">
-                        <h4 class="card-title mb-0 pb-3">welcomeName</h4>
-                        <h5 class="card-title  mb-5 mt-1">welcome</h5>
-                        <p class="text-primary mb-1">welcome</p>
+                        <h4 class="card-title mb-0 pb-3">Welcome {{ Auth::user()->name }}! 🎉</h4>
+                        <h5 class="card-title  mb-5 mt-1">Glad to see you back.</h5>
+                        <p class="text-primary mb-1">Overview of your activity</p>
                         <div class="d-flex align-items-center mt-2">
                             <div class="badge rounded bg-label-primary me-6 p-4">
                                 <i class="ti ti-calendar-event ti-lg" style="font-size: 30px !important;"></i>
@@ -70,9 +70,9 @@
             <div class="row align-items-end">
                 <div class="col-7">
                     <div class="card-body text-nowrap pb-11">
-                        <h4 class="card-title mb-0 pb-3">welcomeName</h4>
-                        <h5 class="card-title  mb-5 mt-1">welcome</h5>
-                        <p class="text-primary mb-1">welcome</p>
+                        <h4 class="card-title mb-0 pb-3">Welcome {{ Auth::user()->name }}! 🎉</h4>
+                        <h5 class="card-title  mb-5 mt-1">Glad to see you back.</h5>
+                        <p class="text-primary mb-1">Overview of your activity</p>
                         <div class="d-flex align-items-center mt-2">
                             <div class="badge rounded bg-label-primary me-6 p-4">
                                 <i class="ti ti-calendar-event ti-lg" style="font-size: 30px !important;"></i>

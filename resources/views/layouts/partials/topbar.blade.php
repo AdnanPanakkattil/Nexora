@@ -379,7 +379,7 @@
                 </div>
               </div>
               <div>
-                <h6 class="mb-0">Muhammed Adnan.P</h6>
+                <h6 class="mb-0">{{ Auth::user() ? Auth::user()->name : 'Guest' }}</h6>
                 <small class="text-muted">Super Admin</small>
               </div>
             </div>
@@ -402,7 +402,11 @@
               <div class="dropdown-divider my-1"></div>
             </li>
             <li>
-              <a class="dropdown-item text-danger" href="">
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
+              <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="ti ti-logout me-3 ti-md"></i>
                 <span class="align-middle">Log Out</span>
               </a>
