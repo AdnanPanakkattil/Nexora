@@ -42,6 +42,9 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h5 class="mb-0">Categories List</h5>
 
+            <a href="{{route ('Categories')}}" class="btn btn-primary">
+                <i class="ti ti-plus"></i> Add Category
+            </a>
         </div>
         <div class="card">
 
@@ -58,31 +61,27 @@
                 <table class="dt-advanced-search table customer-table" id="">
                     <thead>
                         <tr>
-                            <th><input type="checkbox" class="dt-checkboxes form-check-input custom-check1" id="select_all_customer"></th>
-                            <th>ID</th>
+                            <th>Id</th>
+                            <th>Category Image</th>
+                            <th>Category Name</th>
+                            <th>Slug</th>
                             <th>Products</th>
-                            <th>Category</th>
-                            <th>SKU</th>
-                            <th>Price</th>
-                            <th>Discount</th>
-                            <th>Stock</th>
                             <th>Status</th>
-                            <th>Rating</th>
+                            <th>Featured</th>
+                            <th>Order</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th><input type="checkbox" class="dt-checkboxes form-check-input custom-check1" id="select_all_customer"></th>
-                            <th>ID</th>
+                            <th>Id</th>
+                            <th>Category Image</th>
+                            <th>Category Name</th>
+                            <th>Slug</th>
                             <th>Products</th>
-                            <th>Category</th>
-                            <th>SKU</th>
-                            <th>Price</th>
-                            <th>Discount</th>
-                            <th>Stock</th>
                             <th>Status</th>
-                            <th>Rating</th>
+                            <th>Featured</th>
+                            <th>Order</th>
                             <th>Actions</th>
                         </tr>
                     </tfoot>
@@ -94,5 +93,5 @@
 
 @endsection
 @push('scripts')
-<script src="{{ asset('page-js/productManagement/item-master.js') }}"></script>
+<script src="{{ asset('page-js/ProductManagement/Categories.js') }}"></script>
 @endpush

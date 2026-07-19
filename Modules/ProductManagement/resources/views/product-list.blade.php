@@ -39,20 +39,13 @@
 </div>
 <div class="mt-5">
     <div class="">
+
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h5 class="mb-0">Categories List</h5>
+            <h5 class="mb-0">Product List</h5>
 
-            <button
-                class="btn btn-primary"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#addProductOffcanvas"
-                aria-controls="addProductOffcanvas">
-                <a class="menu-link" href="{{route ('product-add') }}">
-                    <div class=""> Add Product</div>
-                </a>
-
-            </button>
+            <a href="{{route ('product-add') }}" class="btn btn-primary">
+                <i class="ti ti-plus"></i> Add Product
+            </a>
         </div>
         <div class="card">
 

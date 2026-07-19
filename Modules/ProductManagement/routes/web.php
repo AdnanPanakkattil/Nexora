@@ -14,5 +14,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Categories
     Route::get('/Categories-list', [CategoriesController::class , 'index'])->name('Categories-list');
+    Route::get('/Categories-add', [CategoriesController::class , 'create'])->name('Categories');
+    Route::post('/categories/store', [CategoriesController::class,'store'])->name('categories.store');
+    Route::get('/categories/edit/{id}', [CategoriesController::class,'edit'])->name('categories.edit');
+    Route::post('/categories/update/{id}', [CategoriesController::class,'update'])->name('categories.update');
+    Route::delete('/categories/delete/{id}', [CategoriesController::class,'destroy'])->name('categories.delete');
+
 
 });
