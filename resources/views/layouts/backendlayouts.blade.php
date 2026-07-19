@@ -95,7 +95,7 @@
                 <div class="content-wrapper">
                     <!-- Content -->
 
-                    <div class="container-xxl row container-p-y">
+                    <div class="container-xxl container-p-y">
                         @yield('content')
                     </div>
                     <!-- / Content -->
