@@ -5,14 +5,14 @@ namespace Modules\ProductManagement\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ProductManagementController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('productmanagement::product-list');
+        return view('productmanagement::Categories-list');
     }
 
     /**
@@ -20,7 +20,7 @@ class ProductManagementController extends Controller
      */
     public function create()
     {
-        return view('productmanagement::product-add');
+        return view('productmanagement::create');
     }
 
     /**

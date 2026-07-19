@@ -23,7 +23,33 @@
     </li>
 
 
-    
+
+    <li class="menu-item" id="product_management_main_menu">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon ti ti-shopping-bag"></i>
+        <div data-i18n="Product Management">Product Management</div>
+      </a>
+
+      <!-- Products -->
+      <ul class="menu-sub">
+        <li class="menu-item" id="product_management_sub_menu">
+          <a href="{{ route('product') }}" class="menu-link">
+            <div data-i18n="Products">Products</div>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Categories -->
+      <ul class="menu-sub">
+        <li class="menu-item" id="product_management_sub_menu">
+          <a href="{{ route('Categories-list') }}" class="menu-link">
+            <div data-i18n="Categories">Categories</div>
+          </a>
+        </li>
+      </ul>
+
+    </li>
+
 
 
     <!-- User -->
@@ -38,11 +64,11 @@
             <div data-i18n="Users">Users</div>
           </a>
         </li>
-      
+
       </ul>
     </li>
 
-   
+
   </ul>
 
 </aside>
