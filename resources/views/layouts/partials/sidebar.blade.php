@@ -41,7 +41,7 @@
 
       <!-- Categories -->
       <ul class="menu-sub">
-        <li class="menu-item" id="product_management_sub_menu">
+        <li class="menu-item" id="Categories_sub_menu">
           <a href="{{ route('Categories-list') }}" class="menu-link">
             <div data-i18n="Categories">Categories</div>
           </a>

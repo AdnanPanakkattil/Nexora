@@ -58,7 +58,7 @@
             </div>
 
             <div class="card-datatable table-responsive">
-                <table class="dt-advanced-search table customer-table" id="">
+                <table class="dt-advanced-search table customer-table" id="category_table">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -93,5 +93,5 @@
 
 @endsection
 @push('scripts')
-<script src="{{ asset('page-js/ProductManagement/Categories.js') }}"></script>
+<script src="{{ asset('page-js/productManagement/Categories.js') }}"></script>
 @endpush

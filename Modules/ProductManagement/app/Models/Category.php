@@ -22,13 +22,18 @@ class Category extends Model
     protected $fillable = [
         'name_en',
         'name_ar',
-        'slug',
         'description',
+        'slug',
         'image',
+        'banner_image',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
+        'sort_order',
         'status',
         'is_featured',
-        'sort_order',
         'show_in_menu',
+        'deleted',
         'created_by',
         'updated_by'
     ];

@@ -11,7 +11,7 @@
     <div class="card">
 
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">{{ isset($category) ? 'Edit Category' : 'Add Category' }}</h5>
+            <h5 class="mb-0">Add Category</h5>
 
             <button type="submit"
                 form="categoryForm"
@@ -24,9 +24,7 @@
         <div class="card-body">
 
             <form id="categoryForm" enctype="multipart/form-data">
-
-                @csrf
-                <input type="hidden" id="category_id" value="{{ $category->id ?? '' }}">
+                <input type="hidden" id="category_id" value="">
 
                 <div class="row">
 
@@ -38,7 +36,7 @@
                             class="form-control"
                             name="name_en"
                             id="name_en"
-                            value="{{ $category->name_en ?? '' }}"
+                            value=""
                             placeholder="Enter Category Name">
                     </div>
 
@@ -50,7 +48,7 @@
                             class="form-control"
                             name="name_ar"
                             id="name_ar"
-                            value="{{ $category->name_ar ?? '' }}"
+                            value=""
                             placeholder="Enter Arabic Name">
                     </div>
 
@@ -62,7 +60,7 @@
                             class="form-control"
                             name="slug"
                             id="slug"
-                            value="{{ $category->slug ?? '' }}"
+                            value=""
                             readonly>
                     </div>
 
@@ -74,10 +72,6 @@
                             class="form-control"
                             name="image"
                             accept="image/*">
-
-                        @if(!empty($category->image))
-                        <img src="{{ asset('uploads/category/' . $category->image) }}" width="60" class="mt-2 rounded">
-                        @endif
                     </div>
 
                     <!-- Banner Image -->
@@ -89,17 +83,14 @@
                             name="banner_image"
                             accept="image/*">
 
-                        @if(!empty($category->banner_image))
-                        <img src="{{ asset('uploads/category/' . $category->banner_image) }}" width="60" class="mt-2 rounded">
-                        @endif
                     </div>
 
                     <!-- Status -->
                     <div class="col-md-6 mb-3">
                         <label class="form-label">Status</label>
                         <select class="form-select" name="status">
-                            <option value="1" {{ (isset($category) ? $category->status : 1) == 1 ? 'selected' : '' }}>Active</option>
-                            <option value="0" {{ (isset($category) && $category->status == 0) ? 'selected' : '' }}>Inactive</option>
+                            <option value="1"></option>
+                            <option value="0"></option>
                         </select>
                     </div>
 
@@ -110,7 +101,7 @@
                             type="number"
                             class="form-control"
                             name="sort_order"
-                            value="{{ $category->sort_order ?? 0 }}">
+                            value="">
                     </div>
 
                     <!-- Description -->
@@ -120,7 +111,7 @@
                             class="form-control"
                             rows="5"
                             name="description"
-                            placeholder="Enter Description">{{ $category->description ?? '' }}</textarea>
+                            placeholder="Enter Description"></textarea>
                     </div>
 
                     <!-- Meta Title -->
@@ -130,7 +121,7 @@
                             type="text"
                             class="form-control"
                             name="meta_title"
-                            value="{{ $category->meta_title ?? '' }}">
+                            value="">
                     </div>
 
                     <!-- Meta Keywords -->
@@ -140,7 +131,7 @@
                             type="text"
                             class="form-control"
                             name="meta_keywords"
-                            value="{{ $category->meta_keywords ?? '' }}">
+                            value="">
                     </div>
 
                     <!-- Meta Description -->
@@ -149,14 +140,14 @@
                         <textarea
                             class="form-control"
                             rows="3"
-                            name="meta_description">{{ $category->meta_description ?? '' }}</textarea>
+                            name="meta_description"></textarea>
                     </div>
 
                     <!-- Featured -->
                     <div class="col-md-3 mb-3 form-check form-switch mt-4">
                         <input type="hidden" name="is_featured" value="0">
                         <input class="form-check-input" type="checkbox" name="is_featured" value="1"
-                            id="is_featured" {{ !empty($category->is_featured) ? 'checked' : '' }}>
+                            id="is_featured">
                         <label class="form-check-label" for="is_featured">Featured</label>
                     </div>
 
@@ -164,7 +155,7 @@
                     <div class="col-md-3 mb-3 form-check form-switch mt-4">
                         <input type="hidden" name="show_in_menu" value="0">
                         <input class="form-check-input" type="checkbox" name="show_in_menu" value="1"
-                            id="show_in_menu" {{ !empty($category->show_in_menu) ? 'checked' : '' }}>
+                            id="show_in_menu">
                         <label class="form-check-label" for="show_in_menu">Show in Menu</label>
                     </div>
 
