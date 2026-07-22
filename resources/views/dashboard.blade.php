@@ -2,6 +2,38 @@
 @section('content')
 @push('styles')
 <link rel="stylesheet" href="{{ asset('page-css/patient.css') }}">
+<style>
+    .stat-ring-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3.5px solid;
+        font-size: 1.15rem;
+    }
+    .stat-ring-primary {
+        background-color: #f0f3ff;
+        border-color: #6366f1;
+        color: #4f46e5;
+    }
+    .stat-ring-success {
+        background-color: #e6fffa;
+        border-color: #14b8a6;
+        color: #0d9488;
+    }
+    .stat-ring-warning {
+        background-color: #fffbe6;
+        border-color: #f59e0b;
+        color: #d97706;
+    }
+    .stat-ring-danger {
+        background-color: #fff5f5;
+        border-color: #f87171;
+        color: #ef4444;
+    }
+</style>
 @endpush
 
 <div class="container-xxl flex-grow-1 container-p-y">
@@ -19,76 +51,156 @@
 
     {{-- Stat Cards --}}
     <div class="row g-4 mb-4">
+        {{-- Card 1: Total Sales --}}
         <div class="col-sm-6 col-xl-3">
             <div class="card h-100">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <p class="text-muted mb-1">Total Revenue</p>
-                            <h4 class="mb-1">₹1,24,500</h4>
-                            <small class="text-success fw-medium"><i class="fa-solid fa-arrow-up"></i> 12.5%</small>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h6 class="fw-bold mb-2 ">Total Sales</h6>
+                                <span class="text-success fw-medium small">
+                                    <i class="fa-solid fa-arrow-trend-up me-1"></i>8.5%
+                                </span>
+                                <span class="text-muted small ms-1">vs last week</span>
+                            </div>
+                            <div class="position-relative d-inline-block" style="width: 52px; height: 52px;">
+                                <svg width="52" height="52" viewBox="0 0 52 52" style="transform: rotate(-90deg);">
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="#eef2ff" stroke-width="3.5" />
+                                    <circle class="progress-ring-circle" cx="26" cy="26" r="22" fill="none" stroke="#6366f1" stroke-width="3.5" stroke-linecap="round" data-percent="85" />
+                                </svg>
+                                <div class="position-absolute top-50 start-50 translate-middle rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; background-color: #f0f3ff; color: #4f46e5;">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="avatar">
-                            <span class="avatar-initial rounded bg-label-primary">
-                                <i class="fa-solid fa-indian-rupee-sign fs-4"></i>
-                            </span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-baseline mt-3">
+                        <div>
+                            <h4 class="fw-bold mb-0 d-inline-block" data-target="35780" data-prefix="$">$0</h4>
+                            <span class="text-muted small">/weekly</span>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn p-0 text-muted" type="button">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        {{-- Card 2: Revenue --}}
         <div class="col-sm-6 col-xl-3">
             <div class="card h-100">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <p class="text-muted mb-1">Total Orders</p>
-                            <h4 class="mb-1">1,240</h4>
-                            <small class="text-success fw-medium"><i class="fa-solid fa-arrow-up"></i> 8.2%</small>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h6 class="fw-bold mb-2 ">Revenue</h6>
+                                <span class="text-success fw-medium small">
+                                    <i class="fa-solid fa-arrow-trend-up me-1"></i>5.7%
+                                </span>
+                                <span class="text-muted small ms-1">vs last week</span>
+                            </div>
+                            <div class="position-relative d-inline-block" style="width: 52px; height: 52px;">
+                                <svg width="52" height="52" viewBox="0 0 52 52" style="transform: rotate(-90deg);">
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="#e6fffa" stroke-width="3.5" />
+                                    <circle class="progress-ring-circle" cx="26" cy="26" r="22" fill="none" stroke="#14b8a6" stroke-width="3.5" stroke-linecap="round" data-percent="75" />
+                                </svg>
+                                <div class="position-absolute top-50 start-50 translate-middle rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; background-color: #e6fffa; color: #0d9488;">
+                                    <i class="fa-solid fa-credit-card"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="avatar">
-                            <span class="avatar-initial rounded bg-label-success">
-                                <i class="fa-solid fa-cart-shopping fs-4"></i>
-                            </span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-baseline mt-3">
+                        <div>
+                            <h4 class="fw-bold mb-0 d-inline-block" data-target="2458" data-prefix="$">$0</h4>
+                            <span class="text-muted small">/weekly</span>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn p-0 text-muted" type="button">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        {{-- Card 3: Total Orders --}}
         <div class="col-sm-6 col-xl-3">
             <div class="card h-100">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <p class="text-muted mb-1">Total Products</p>
-                            <h4 class="mb-1">356</h4>
-                            <small class="text-danger fw-medium"><i class="fa-solid fa-arrow-down"></i> 2.1%</small>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h6 class="fw-bold mb-2 ">Total Orders</h6>
+                                <span class="text-danger fw-medium small">
+                                    <i class="fa-solid fa-arrow-trend-down me-1"></i>2.1%
+                                </span>
+                                <span class="text-muted small ms-1">vs last week</span>
+                            </div>
+                            <div class="position-relative d-inline-block" style="width: 52px; height: 52px;">
+                                <svg width="52" height="52" viewBox="0 0 52 52" style="transform: rotate(-90deg);">
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="#fffbe6" stroke-width="3.5" />
+                                    <circle class="progress-ring-circle" cx="26" cy="26" r="22" fill="none" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round" data-percent="65" />
+                                </svg>
+                                <div class="position-absolute top-50 start-50 translate-middle rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; background-color: #fffbe6; color: #d97706;">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="avatar">
-                            <span class="avatar-initial rounded bg-label-warning">
-                                <i class="fa-solid fa-box fs-4"></i>
-                            </span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-baseline mt-3">
+                        <div>
+                            <h4 class="fw-bold mb-0 d-inline-block" data-target="1245">0</h4>
+                            <span class="text-muted small">/weekly</span>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn p-0 text-muted" type="button">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        {{-- Card 4: New Customers --}}
         <div class="col-sm-6 col-xl-3">
             <div class="card h-100">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <p class="text-muted mb-1">New Customers</p>
-                            <h4 class="mb-1">89</h4>
-                            <small class="text-success fw-medium"><i class="fa-solid fa-arrow-up"></i> 15.3%</small>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h6 class="fw-bold mb-2 ">New Customers</h6>
+                                <span class="text-success fw-medium small">
+                                    <i class="fa-solid fa-arrow-trend-up me-1"></i>12%
+                                </span>
+                                <span class="text-muted small ms-1">vs last week</span>
+                            </div>
+                            <div class="position-relative d-inline-block" style="width: 52px; height: 52px;">
+                                <svg width="52" height="52" viewBox="0 0 52 52" style="transform: rotate(-90deg);">
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="#fff5f5" stroke-width="3.5" />
+                                    <circle class="progress-ring-circle" cx="26" cy="26" r="22" fill="none" stroke="#f87171" stroke-width="3.5" stroke-linecap="round" data-percent="80" />
+                                </svg>
+                                <div class="position-absolute top-50 start-50 translate-middle rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; background-color: #fff5f5; color: #ef4444;">
+                                    <i class="fa-solid fa-user-group"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="avatar">
-                            <span class="avatar-initial rounded bg-label-info">
-                                <i class="fa-solid fa-user-plus fs-4"></i>
-                            </span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-baseline mt-3">
+                        <div>
+                            <h4 class="fw-bold mb-0 d-inline-block" data-target="320">0</h4>
+                            <span class="text-muted small">/weekly</span>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn p-0 text-muted" type="button">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -98,18 +210,18 @@
 
     {{-- Chart + Order Status --}}
     <div class="row g-4 mb-4">
-        <div class="col-xl-8">
+        <div class="col-xl-6">
             <div class="card h-100">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Sales Overview</h5>
-                    <select class="form-select form-select-sm w-auto">
-                        <option>This Week</option>
-                        <option>This Month</option>
-                        <option>This Year</option>
+                    <h5 class="mb-0 fw-bold">Sales Summary</h5>
+                    <select class="form-select form-select-sm w-auto border-0 text-muted shadow-none">
+                        <option>Monthly</option>
+                        <option>Weekly</option>
+                        <option>Yearly</option>
                     </select>
                 </div>
                 <div class="card-body">
-                    <div id="salesChart"></div>
+                    <div id="chart"></div>
                 </div>
             </div>
         </div>
@@ -121,6 +233,86 @@
                 </div>
                 <div class="card-body">
                     <div id="orderStatusChart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Revenue Statistics Card --}}
+    <div class="row g-4 mb-4">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="card-title mb-0 fw-bold fs-5">Revenue Statistics</h5>
+                        <button class="btn text-white btn-sm px-3" style="background-color: #8c57ff; border-color: #8c57ff;">
+                            <i class="fa-solid fa-download me-1"></i> Download
+                        </button>
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                        <div class="d-flex gap-4">
+                            <div>
+                                <small class="text-muted d-block fw-medium">Total Revenue</small>
+                                <h4 class="fw-bold mb-0">$85,24k</h4>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block fw-medium">Total Refunds</small>
+                                <h4 class="fw-bold mb-0">$4,125</h4>
+                            </div>
+                        </div>
+                        <div class="nav-align-top">
+                            <div class="btn-group btn-group-sm p-1 rounded-3" style="background-color: #f5f5f7;">
+                                <button type="button" class="btn btn-white shadow-sm fw-semibold rounded-2 px-3">Monthly</button>
+                                <button type="button" class="btn text-muted fw-semibold rounded-2 px-3">Yearly</button>
+                                <button type="button" class="btn text-muted fw-semibold rounded-2 px-3">Weekly</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pt-2">
+                    <div id="revenueStatisticsChart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Monthly Earnings & Weekly Orders Cards --}}
+    <div class="row g-4 mb-4">
+        <div class="col-md-6 col-xl-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-1">
+                        <div>
+                            <h4 class="fw-bold mb-1">$71.5k</h4>
+                            <span class="text-muted small">Monthly Earnings</span>
+                        </div>
+                        <span class="text-success fw-medium small">
+                            <i class="fa-solid fa-arrow-trend-up me-1"></i>3.5%
+                        </span>
+                    </div>
+                    <div id="monthlyEarningsChart" class="d-flex justify-content-center"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card h-100">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <div>
+                                <h4 class="fw-bold mb-1">185k</h4>
+                                <span class="text-muted small">Weekly Orders</span>
+                            </div>
+                            <span class="text-danger fw-medium small">
+                                <i class="fa-solid fa-arrow-trend-down me-1"></i>4.5%
+                            </span>
+                        </div>
+                        <div id="weeklyOrdersChart"></div>
+                    </div>
+                    <div class="mt-2 text-muted small">
+                        Last week <span class="text-success fw-medium">+8.2%</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -182,42 +374,5 @@
 @endsection
 
 @push('scripts')
-{{-- If your layout doesn't already load ApexCharts locally, this CDN guarantees it works --}}
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-
-<script>
-    function updateDateTime() {
-        const now = new Date();
-        document.getElementById('currentDateTime').innerText = now.toLocaleString();
-    }
-    updateDateTime();
-    setInterval(updateDateTime, 1000);
-
-    document.addEventListener('DOMContentLoaded', function () {
-        if (typeof ApexCharts === 'undefined') {
-            console.error('ApexCharts not loaded — check script path/order.');
-            return;
-        }
-
-        // Sales line chart
-        const salesChart = new ApexCharts(document.querySelector("#salesChart"), {
-            chart: { type: 'area', height: 300, toolbar: { show: false } },
-            series: [{ name: 'Sales', data: [30, 40, 35, 50, 49, 60, 70, 91, 125] }],
-            xaxis: { categories: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'] },
-            colors: ['#696cff'],
-            dataLabels: { enabled: false },
-            stroke: { curve: 'smooth', width: 2 }
-        });
-        salesChart.render();
-
-        // Order status donut
-        const orderStatusChart = new ApexCharts(document.querySelector("#orderStatusChart"), {
-            chart: { type: 'donut', height: 300 },
-            series: [44, 33, 23],
-            labels: ['Delivered', 'Pending', 'Cancelled'],
-            colors: ['#71dd37', '#ffab00', '#ff3e1d']
-        });
-        orderStatusChart.render();
-    });
-</script>
+<script src="{{ asset('page-js/dashboard-charts.js') }}"></script>
 @endpush

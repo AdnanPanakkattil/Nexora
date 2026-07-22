@@ -68,7 +68,7 @@
 
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/sweetalert2/sweetalert2.css')}}" />
 
-
+    @stack('styles')
 </head>
 <script>
     var baseUrl = "{{ url('/') }}";
@@ -143,6 +143,7 @@
     <script src="{{ asset('assets/vendor/libs/sweetalert2/sweetalert2.js')}}"></script>
     <script src="{{ asset('assets/js/extended-ui-sweetalert2.js')}}"></script>
     @yield('page-script')
+    @stack('scripts')
 </body>
 
 </html>
