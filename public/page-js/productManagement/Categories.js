@@ -8,170 +8,145 @@ $(function () {
         },
     });
 
-    var categoryTable = $("#category_table").DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: {
-            url: BASE_URL + "/category",
-            data: function (d) {
-                d.type = $("#categoryType").val();
-            },
-        },
-        columns: [
-            { data: "categoryId", name: "categoryId" },
-            { data: "categoryName_en", name: "categoryName_en" },
-            { data: "categoryName_ar", name: "categoryName_ar" },
-            { data: "type", name: "type" },
-            { data: "actions", name: "actions", orderable: false, searchable: false },
-        ],
+    // Auto-generate slug when typing English category name
+    $("#name_en").on("keyup change", function () {
+        var text = $(this).val();
+        var slug = text.toLowerCase()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/[\s_-]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+        $("#slug").val(slug);
     });
 
+    // DataTables Initialization
+    if ($("#category_table").length > 0) {
+        var categoryTable = $("#category_table").DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: {
+                url: "/categories/data",
+                type: "GET"
+            },
+            columns: [
+                { data: "id", name: "id" },
+                { data: "image", name: "image", orderable: false, searchable: false },
+                { data: "categoryName_en", name: "name_en" },
+                { data: "categoryName_ar", name: "name_ar" },
+                { data: "slug", name: "slug" },
+                { data: "status", name: "status" },
+                { data: "is_featured", name: "is_featured" },
+                { data: "sort_order", name: "sort_order" },
+                { data: "actions", name: "actions", orderable: false, searchable: false }
+            ]
+        });
 
-    // Save 
-    $("#CategorySaveBtn").on("click", function (e) {
+        // Delete Handler
+        $("#category_table").on("click", ".item-delete", function (e) {
+            e.preventDefault();
+            var deleteUrl = $(this).data("id");
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Yes, delete it!",
+                customClass: {
+                    confirmButton: "btn btn-danger me-3 waves-effect waves-light",
+                    cancelButton: "btn btn-label-secondary waves-effect waves-light",
+                },
+                buttonsStyling: false,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $("#loader-overlay").show();
+                    $.ajax({
+                        url: deleteUrl,
+                        type: "DELETE",
+                        success: function (response) {
+                            $("#loader-overlay").hide();
+                            if (response.status) {
+                                categoryTable.ajax.reload(null, false);
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Deleted!",
+                                    text: response.message || "Category deleted successfully!",
+                                    customClass: {
+                                        confirmButton: "btn btn-success waves-effect waves-light",
+                                    },
+                                });
+                            }
+                        },
+                        error: function (err) {
+                            $("#loader-overlay").hide();
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error!",
+                                text: "Failed to delete category.",
+                                customClass: {
+                                    confirmButton: "btn btn-danger waves-effect waves-light",
+                                },
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    }
+
+    // Form Submission via AJAX (supports file uploads)
+    $("#categoryForm").on("submit", function (e) {
         e.preventDefault();
-
-        var categoryId = $("#category_id").val();
-        var url = categoryId
-            ? BASE_URL + "/update-category/" + categoryId
-            : BASE_URL + "/category";
-        var method = categoryId ? "PUT" : "POST";
+        var form = $(this);
+        var actionUrl = form.attr("action");
+        var formData = new FormData(this);
 
         $("#loader-overlay").show();
+        $(".invalid-feedback").remove();
+        $(".is-invalid").removeClass("is-invalid");
+
         $.ajax({
-            url: url,
-            method: method,
-            data: $("#addCategoryForm").serialize(),
+            url: actionUrl,
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
             success: function (response) {
                 $("#loader-overlay").hide();
-                if (response.status === true) {
-                    $("#addCategoryModal").modal("hide");
-                    categoryTable.ajax.reload(null, false);
+                if (response.status) {
                     Swal.fire({
                         icon: "success",
+                        title: "Success!",
                         text: response.message,
                         customClass: {
                             confirmButton: "btn btn-success waves-effect waves-light",
                         },
-                    });
-                } else {
-                    Swal.fire({
-                        icon: "error",
-                        text: "Failed to save category.",
-                        customClass: {
-                            confirmButton: "btn btn-danger waves-effect waves-light",
-                        },
+                    }).then(() => {
+                        if (response.redirect_url) {
+                            window.location.href = response.redirect_url;
+                        }
                     });
                 }
             },
             error: function (xhr) {
                 $("#loader-overlay").hide();
                 if (xhr.status === 422) {
-                    $(".error-text").text("");
-                    let errors = xhr.responseJSON.errors;
-                    $.each(errors, function (key, value) {
-                        $("." + key + "_error").text(value[0]);
+                    var errors = xhr.responseJSON.errors;
+                    $.each(errors, function (field, messages) {
+                        var input = $('[name="' + field + '"]');
+                        input.addClass("is-invalid");
+                        input.after('<div class="invalid-feedback">' + messages[0] + '</div>');
                     });
                 } else {
-                    Swal.fire("Error!", "An unexpected error occurred.", "error");
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error!",
+                        text: "An error occurred while saving category.",
+                        customClass: {
+                            confirmButton: "btn btn-danger waves-effect waves-light",
+                        },
+                    });
                 }
-            },
-        });
-    });
-
-    // Edit
-    categoryTable.on("click", ".item-edit", function () {
-        var categoryId = $(this).data("id");
-
-        $("#loader-overlay").show();
-        $.ajax({
-            type: "GET",
-            url: BASE_URL + "/edit-category/" + categoryId,
-            success: function (response) {
-                $("#loader-overlay").hide();
-                resetCategoryForm();
-                $("#addCategoryForm").find("input, textarea, select").prop("disabled", false);
-                $("#category_modal_header").text("Edit Category");
-                $("#category_modal_footer").show();
-                $("#category_id").val(response.categoryId);
-                $("#categoryName_en").val(response.categoryName_en);
-                $("#categoryName_ar").val(response.categoryName_ar);
-                $("#addCategoryModal").modal("show");
-
-                $("#addCategoryModal").one("shown.bs.modal", function () {
-                    $("#type").val(response.type).trigger("change");
-                    if (response.type === "insurance_deduction_category") {
-                        $(".copayment-maximum-div").show();
-                        $("#copaymentMaximum").val(response.copaymentMaximum).trigger("change");
-                    } else {
-                        $(".copayment-maximum-div").hide();
-                        $("#copaymentMaximum").val("").trigger("change");
-                    }
-                });
-            },
-            error: function () {
-                $("#loader-overlay").hide();
-                Swal.fire("Error!", "Unable to fetch category details.", "error");
-            },
-        });
-    });
-
-    // Delete
-    categoryTable.on("click", ".item-delete", function (e) {
-        e.preventDefault();
-        var deleteUrl = $(this).data("id");
-        Swal.fire({
-            title: "Are you sure?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes, delete it!",
-            customClass: {
-                confirmButton: "btn btn-primary me-3 waves-effect waves-light",
-                cancelButton: "btn btn-label-secondary waves-effect waves-light",
-            },
-            buttonsStyling: false,
-        }).then((result) => {
-            if (result.isConfirmed) {
-                 $("#loader-overlay").show();
-                $.ajax({
-                    url: deleteUrl,
-                    type: "DELETE",
-                    success: function (response) {
-                        if (response.status) {
-                            $("#loader-overlay").hide();
-                            categoryTable.ajax.reload(null, false);
-                            Swal.fire({
-                                icon: "success",
-                                text: "Category deleted successfully!",
-                                customClass: {
-                                    confirmButton: "btn btn-success waves-effect waves-light",
-                                },
-                            });
-                        }
-                    },
-                    error: function (err) {
-                        $("#loader-overlay").hide();
-                        console.error("Error deleting category:", err);
-                    },
-                });
-            } else if (result.dismiss === Swal.DismissReason.cancel) {
-                Swal.fire({
-                    title: "Cancelled",
-                    text: "Category deletion cancelled.",
-                    icon: "error",
-                    customClass: {
-                        confirmButton: "btn btn-success waves-effect waves-light",
-                    },
-                });
             }
         });
-    });
-
-    $("#categoryType").on("change", function () {
-        categoryTable.ajax.reload();
-    });
-
-    document.getElementById("closebtn").addEventListener("click", function () {
-        $("#addCategoryModal").modal("hide");
     });
 });

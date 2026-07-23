@@ -23,6 +23,7 @@
     }
 </style>
 @endpush
+
 @section('content')
 
 <div id="loader-overlay">
@@ -37,61 +38,46 @@
         </div>
     </div>
 </div>
-<div class="mt-5">
-    <div class="">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h5 class="mb-0">Categories List</h5>
 
-            <a href="{{route ('Categories')}}" class="btn btn-primary">
-                <i class="ti ti-plus"></i> Add Category
-            </a>
+<div class="mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="fw-bold py-3 mb-0"><span class="text-muted fw-light">Product Management /</span> Categories</h4>
+
+        <a href="{{ route('Categories') }}" class="btn btn-primary">
+            <i class="ti ti-plus me-1"></i> Add Category
+        </a>
+    </div>
+
+    @if(session('success'))
+        <div class="alert alert-success alert-dismissible mb-3" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <div class="card">
+    @endif
 
-            <div class="card-body">
-                <form class="dt_adv_search" method="GET">
-                    <div class="row">
-                        <div class="col-12">
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <div class="card-datatable table-responsive">
-                <table class="dt-advanced-search table customer-table" id="category_table">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Category Image</th>
-                            <th>Category Name</th>
-                            <th>Slug</th>
-                            <th>Products</th>
-                            <th>Status</th>
-                            <th>Featured</th>
-                            <th>Order</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Id</th>
-                            <th>Category Image</th>
-                            <th>Category Name</th>
-                            <th>Slug</th>
-                            <th>Products</th>
-                            <th>Status</th>
-                            <th>Featured</th>
-                            <th>Order</th>
-                            <th>Actions</th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
+    <div class="card">
+        <div class="card-datatable table-responsive p-3">
+            <table class="dt-advanced-search table customer-table" id="category_table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Category Image</th>
+                        <th>Category Name (EN)</th>
+                        <th>Category Name (AR)</th>
+                        <th>Slug</th>
+                        <th>Status</th>
+                        <th>Featured</th>
+                        <th>Order</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
     </div>
 </div>
 
 @endsection
+
 @push('scripts')
 <script src="{{ asset('page-js/productManagement/Categories.js') }}"></script>
 @endpush

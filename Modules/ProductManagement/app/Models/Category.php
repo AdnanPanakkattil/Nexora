@@ -10,12 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
-    use HasFactory;
-
-    /**
-     * The attributes that are mass assignable.
-     */
-    use SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'Categories';
 
@@ -37,8 +32,22 @@ class Category extends Model
         'created_by',
         'updated_by'
     ];
-    // protected static function newFactory(): CategoryFactory
-    // {
-    //     // return CategoryFactory::new();
-    // }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            if (auth()->check() && !$model->created_by) {
+                $model->created_by = auth()->id();
+            }
+        });
+
+        static::updating(function ($model) {
+            if (auth()->check() && !$model->updated_by) {
+                $model->updated_by = auth()->id();
+            }
+        });
+    }
 }
+
