@@ -5,7 +5,7 @@
       <span class="app-brand-logo demo">
         <img src="{{ asset('assets/imglogo/logo-sm.png') }}" alt="Nexora Logo" height="20px">
       </span>
-      <span class="app-brand-text demo menu-text text-dark fw-bolder" style="font-size: 24px;">Nexora</span>
+      <span class="app-brand-text demo menu-text  fw-bolder" style="font-size: 24px;">Nexora</span>
     </a>
   </div>
 

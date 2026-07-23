@@ -68,6 +68,124 @@
 
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/sweetalert2/sweetalert2.css')}}" />
 
+    <!-- Responsive Sidebar / Content CSS -->
+    <style>
+        /* Smooth transitions for sidebar open/close */
+        .layout-menu {
+            transition: all .25s ease-in-out;
+        }
+
+        .layout-content-navbar .content-wrapper {
+            transition: margin-left .25s ease-in-out, padding .25s ease-in-out;
+        }
+
+        .layout-overlay {
+            transition: opacity .25s ease-in-out, visibility .25s ease-in-out;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .container-xxl {
+            max-width: 100%;
+        }
+
+        /* Large screens - sidebar always visible, no overlay */
+        @media (min-width: 1200px) {
+            .layout-overlay {
+                display: none;
+            }
+        }
+
+        /* Tablet & Mobile - sidebar becomes an off-canvas drawer */
+        @media (max-width: 1199.98px) {
+            .layout-menu-fixed .layout-page,
+            .layout-menu-fixed-offcanvas .layout-page {
+                margin-left: 0 !important;
+            }
+
+            .layout-menu {
+                position: fixed;
+                top: 0;
+                left: -260px;
+                height: 100vh;
+                z-index: 1090;
+            }
+
+            .layout-menu-expanded .layout-menu {
+                left: 0;
+            }
+
+            .layout-overlay {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, .5);
+                z-index: 1080;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+
+            .layout-menu-expanded .layout-overlay {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+            .content-wrapper {
+                padding: 12px !important;
+            }
+
+            .container-xxl {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+        }
+
+        /* Small tablets */
+        @media (max-width: 767.98px) {
+            .content-wrapper {
+                padding: 10px !important;
+            }
+
+            .card {
+                margin-bottom: 12px;
+            }
+
+            .table-responsive {
+                font-size: 13px;
+            }
+        }
+
+        /* Phones */
+        @media (max-width: 575.98px) {
+            .content-wrapper {
+                padding: 8px !important;
+            }
+
+            .container-xxl {
+                padding-left: 4px;
+                padding-right: 4px;
+            }
+
+            .card-header,
+            .card-body {
+                padding: 12px !important;
+            }
+
+            h1, .h1 { font-size: 1.4rem; }
+            h2, .h2 { font-size: 1.2rem; }
+            h3, .h3 { font-size: 1.1rem; }
+
+            .table-responsive {
+                font-size: 12px;
+            }
+        }
+    </style>
+
     @stack('styles')
 </head>
 <script>
@@ -142,6 +260,10 @@
     <script src="{{ asset('assets/js/dashboards-analytics.js') }}"></script>
     <script src="{{ asset('assets/vendor/libs/sweetalert2/sweetalert2.js')}}"></script>
     <script src="{{ asset('assets/js/extended-ui-sweetalert2.js')}}"></script>
+
+    <!-- Responsive Sidebar Toggle JS -->
+    
+
     @yield('page-script')
     @stack('scripts')
 </body>
