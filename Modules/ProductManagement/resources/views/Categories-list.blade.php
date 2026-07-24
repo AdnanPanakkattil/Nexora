@@ -41,20 +41,12 @@
 
 <div class="mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4 class="fw-bold py-3 mb-0"><span class="text-muted fw-light">Product Management /</span> Categories</h4>
+        <h4 class="fw-bold py-3 mb-0"> Categories</h4>
 
         <a href="{{ route('Categories') }}" class="btn btn-primary">
             <i class="ti ti-plus me-1"></i> Add Category
         </a>
     </div>
-
-    @if(session('success'))
-        <div class="alert alert-success alert-dismissible mb-3" role="alert">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-
     <div class="card">
         <div class="card-datatable table-responsive p-3">
             <table class="dt-advanced-search table customer-table" id="category_table">
@@ -71,6 +63,19 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
+                <tfoot>
+                    <tr>
+                        <th>Id</th>
+                        <th>Category Image</th>
+                        <th>Category Name (EN)</th>
+                        <th>Category Name (AR)</th>
+                        <th>Slug</th>
+                        <th>Status</th>
+                        <th>Featured</th>
+                        <th>Order</th>
+                        <th>Actions</th>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </div>
