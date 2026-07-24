@@ -56,9 +56,7 @@
                         <th>Category Image</th>
                         <th>Category Name (EN)</th>
                         <th>Category Name (AR)</th>
-                        <th>Slug</th>
                         <th>Status</th>
-                        <th>Featured</th>
                         <th>Order</th>
                         <th>Actions</th>
                     </tr>
@@ -69,9 +67,7 @@
                         <th>Category Image</th>
                         <th>Category Name (EN)</th>
                         <th>Category Name (AR)</th>
-                        <th>Slug</th>
                         <th>Status</th>
-                        <th>Featured</th>
                         <th>Order</th>
                         <th>Actions</th>
                     </tr>

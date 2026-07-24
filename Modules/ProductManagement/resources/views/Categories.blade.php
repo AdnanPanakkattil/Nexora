@@ -13,9 +13,10 @@
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">Add Category</h5>
                 <div class="d-flex gap-2">
-                    <button type="reset" class="btn btn-light">
+                    <a href="{{ route('Categories-list') }}" class="btn btn-light">
+                        <i class="fa-solid fa-arrow-left me-1"></i>
                         Cancel
-                    </button>
+                    </a>
                     <button type="submit" form="categoryForm" class="btn btn-primary">
                         <i class="ti ti-device-floppy me-1"></i>
                         Save Category
@@ -61,35 +62,15 @@
                     <div class="row g-3">
 
                         <div class="col-md-6">
-                            <label for="image" class="form-label">
-                                Category Image
-                            </label>
-
-                            <input
-                                type="file"
-                                class="form-control"
-                                id="image"
-                                name="image">
-
-                            <small class="text-muted">
-                                Recommended size: 500 × 500 px
-                            </small>
+                            <label for="image" class="form-label"> Category Image </label>
+                            <input type="file" class="form-control" id="image" name="image">
+                            <small class="text-muted">  Recommended size: 500 X 500 px </small>
                         </div>
 
                         <div class="col-md-6">
-                            <label for="" class="form-label">
-                                Banner Image
-                            </label>
-
-                            <input
-                                type="file"
-                                class="form-control"
-                                name=""
-                                accept="image/*">
-
-                            <small class="text-muted">
-                                Recommended size: 1200 × 400 px
-                            </small>
+                            <label for="" class="form-label"> Banner Image </label>
+                            <input type="file" class="form-control" name="" accept="image/*">
+                            <small class="text-muted"> Recommended size: 1200 X 400 px </small>
                         </div>
 
                     </div>
@@ -97,34 +78,22 @@
 
                 <!-- Settings -->
                 <div class="border rounded p-4">
-
                     <h6 class="fw-semibold mb-3">
                         <i class="ti ti-settings me-2"></i>
                         Settings
                     </h6>
 
                     <div class="form-check form-switch">
-
                         <input type="hidden" name="" value="0">
-
-                        <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name=""
-                            value="1">
-
+                        <input class="form-check-input" type="checkbox" name="" value="1">
                         <label class="form-check-label ms-2" for="">
                             Active Category
                         </label>
-
                     </div>
-
+                    
                 </div>
-
             </div>
-
         </div>
-
     </form>
 
 </div>
