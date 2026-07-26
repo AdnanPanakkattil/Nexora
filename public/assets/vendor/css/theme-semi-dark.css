@@ -1785,7 +1785,7 @@ li.ui-timepicker-selected,
 
 .bg-menu-theme.menu-horizontal .menu-inner .menu-item:not(.menu-item-closing)>.menu-sub,
 .bg-menu-theme.menu-horizontal .menu-inner .menu-item.open>.menu-toggle {
-  background: #2f3349;
+  background: #222a3c;
 }
 
 .bg-menu-theme.menu-horizontal .menu-item.active>.menu-link:not(.menu-toggle) {
@@ -1800,7 +1800,7 @@ li.ui-timepicker-selected,
 }
 
 .bg-menu-theme .menu-inner-shadow {
-  background: linear-gradient(#2f3349 41%, rgba(47, 51, 73, 0.11) 95%, rgba(47, 51, 73, 0));
+  background: linear-gradient(#222a3c 41%, rgba(47, 51, 73, 0.11) 95%, rgba(47, 51, 73, 0));
 }
 
 .bg-menu-theme .menu-text {

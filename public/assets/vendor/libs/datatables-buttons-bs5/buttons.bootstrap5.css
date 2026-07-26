@@ -482,7 +482,7 @@ div.dt-buttons div.dropdown-menu .dt-button {
 }
 
 .dark-style div.dataTables_wrapper .dt-button-collection {
-  background-color: #2f3349;
+  background-color: #222a3c;
 }
 .dark-style .dataTable a:not([href]):not([tabindex]) {
   color: #28c76f;

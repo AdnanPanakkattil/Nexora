@@ -278,10 +278,10 @@
 
 .dark-style .shepherd-element {
   box-shadow: 0 0.1875rem 0.75rem 0 rgba(19, 17, 32, 0.2);
-  background: #2f3349 !important;
+  background: #222a3c !important;
 }
 .dark-style .shepherd-element .shepherd-content .shepherd-header {
-  background: #2f3349 !important;
+  background: #222a3c !important;
 }
 .dark-style .shepherd-element .shepherd-content .shepherd-header .shepherd-title {
   color: #cfcde4 !important;
@@ -293,8 +293,8 @@
   color: #acabc1 !important;
 }
 .dark-style .shepherd-arrow:before {
-  background-color: #2f3349 !important;
-  border-color: #2f3349 !important;
+  background-color: #222a3c !important;
+  border-color: #222a3c !important;
 }
 
 [dir=rtl] .shepherd-element .btn-next {

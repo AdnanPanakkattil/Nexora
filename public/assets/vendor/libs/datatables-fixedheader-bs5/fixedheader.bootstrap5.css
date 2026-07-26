@@ -16,7 +16,7 @@ table.dataTable.fixedHeader-locked {
 }
 html[data-bs-theme=dark] table.dataTable.fixedHeader-floating,
 html[data-bs-theme=dark] table.dataTable.fixedHeader-locked {
-  background-color: var(--bs-body-bg);
+  background-color: #0f172b;
 }
 
 .dt-fixedheader.fixedHeader-floating.table.dataTable {
@@ -37,10 +37,10 @@ html[data-bs-theme=dark] table.dataTable.fixedHeader-locked {
 }
 
 .dark-style .dtfh-floatingparenthead {
-  border-bottom: 1px solid #44485e;
+  border-bottom: 1px solid #222a3c;
 }
 .dark-style .table-bordered.dt-fixedheader.fixedHeader-floating.table.dataTable thead > tr > th,
 .dark-style .table-bordered.dt-fixedheader.fixedHeader-locked.table.dataTable thead > tr > th {
   border-bottom-width: 1px;
-  border-color: #44485e;
+  border-color: #222a3c;
 }

@@ -769,7 +769,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 .dark-style .noUi-tooltip {
   font-size: 0.8125rem;
-  color: #2f3349;
+  color: #222a3c;
   border: none;
   background: #f7f4ff;
 }

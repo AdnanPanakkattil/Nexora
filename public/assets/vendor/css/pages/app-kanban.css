@@ -156,7 +156,7 @@
   color: #cfcde4;
 }
 .dark-style .app-kanban .kanban-board .kanban-item {
-  background-color: #2f3349;
+  background-color: #222a3c;
   box-shadow: 0 0.125rem 0.5rem 0 rgba(19, 17, 32, 0.18);
 }
 .dark-style .app-kanban .kanban-board .kanban-item .kanban-text {
@@ -166,7 +166,7 @@
   color: #cfcde4;
 }
 .dark-style .kanban-item.gu-mirror {
-  background-color: #2f3349;
+  background-color: #222a3c;
 }
 
 [dir=rtl] .app-kanban .kanban-board,

@@ -375,7 +375,7 @@ button.toast-close-button {
 .dark-style #toast-container .toast-info,
 .dark-style #toast-container .toast-warning {
   color: #cfcde4;
-  background-color: #2f3349;
+  background-color: #222a3c;
 }
 
 @media (min-width: 241px) and (max-width: 480px) {

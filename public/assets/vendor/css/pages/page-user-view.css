@@ -35,22 +35,22 @@
 
 @media (min-width: 992px) {
   .dark-style .user-card .border-container-lg {
-    border-right: 1px solid #44485e;
+    border-right: 1px solid #222a3c;
   }
   .dark-style[dir=rtl] .user-card .border-container-lg {
     border-right: 0;
-    border-left: 1px solid #44485e;
+    border-left: 1px solid #222a3c;
   }
 }
 @media (min-width: 576px) {
   .dark-style .user-card .border-container {
-    border-right: 1px solid #44485e;
+    border-right: 1px solid #222a3c;
   }
   .dark-style .timeline .break-text {
     width: calc(100% - 90px);
   }
   .dark-style[dir=rtl] .user-card .border-container {
     border-right: 0;
-    border-left: 1px solid #44485e;
+    border-left: 1px solid #222a3c;
   }
 }

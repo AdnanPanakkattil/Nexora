@@ -392,10 +392,10 @@ html:not([dir=rtl]) .light-style .bs-stepper.vertical .bs-stepper-header {
 }
 
 .dark-style .bs-stepper {
-  background-color: #2f3349;
+  background-color: #222a3c;
 }
 .dark-style .bs-stepper .bs-stepper-header {
-  border-bottom: 1px solid #44485e;
+  border-bottom: 1px solid #222a3c;
 }
 .dark-style .bs-stepper .bs-stepper-header .line i {
   color: #acabc1;
@@ -425,14 +425,14 @@ html:not([dir=rtl]) .light-style .bs-stepper.vertical .bs-stepper-header {
   .dark-style .bs-stepper.vertical .bs-stepper-header {
     border-right: none !important;
     border-left: none !important;
-    border-bottom: 1px solid #44485e;
+    border-bottom: 1px solid #222a3c;
   }
 }
 .dark-style .bs-stepper.wizard-modern {
   background-color: transparent;
 }
 .dark-style .bs-stepper.wizard-modern .bs-stepper-content {
-  background-color: #2f3349;
+  background-color: #222a3c;
   box-shadow: 0 0.1875rem 0.75rem 0 rgba(19, 17, 32, 0.2);
 }
 .dark-style .bs-stepper.wizard-icons .bs-stepper-header .bs-stepper-icon i {
@@ -446,11 +446,11 @@ html:not([dir=rtl]) .light-style .bs-stepper.vertical .bs-stepper-header {
 }
 
 [dir=rtl] .dark-style .bs-stepper.vertical .bs-stepper-header {
-  border-left: 1px solid #44485e;
+  border-left: 1px solid #222a3c;
 }
 
 html:not([dir=rtl]) .dark-style .bs-stepper.vertical .bs-stepper-header {
-  border-right: 1px solid #44485e;
+  border-right: 1px solid #222a3c;
 }
 
 [dir=rtl] .bs-stepper .bs-stepper-content .btn-next:not(.btn-submit) i,

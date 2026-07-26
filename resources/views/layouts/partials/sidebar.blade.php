@@ -1,11 +1,11 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" role="navigation" aria-label="Main navigation">
   <!-- Logo Section -->
   <div class="app-brand demo py-3">
-    <a href="index.html" class="app-brand-link">
-      <span class="app-brand-logo demo">
-        <img src="{{ asset('assets/imglogo/logo-sm.png') }}" alt="Nexora Logo" height="20px">
+    <a href="{{ route('dashboard') }}" class="app-brand-link d-flex align-items-center">
+      <span class="app-brand-logo demo me-2 d-flex align-items-center">
+        <img src="{{ asset('assets/imglogo/logo.png') }}" alt="Nexora Logo" style="height: 34px; width: auto; object-fit: contain;">
       </span>
-      <span class="app-brand-text demo menu-text  fw-bolder" style="font-size: 24px;">Nexora</span>
+      <span class="app-brand-text demo menu-text fw-bolder" style="font-size: 22px;">Nexora</span>
     </a>
   </div>
 

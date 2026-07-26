@@ -4,11 +4,11 @@
         <div class="card-body">
             <!-- Logo -->
             <div class="app-brand justify-content-center mb-6">
-                <a href="/" class="app-brand-link">
-                    <span class="app-brand-logo demo">
-                        <img src="{{ asset('assets/imglogo/logo-sm.png') }}" alt="Nexora Logo" height="24px">
+                <a href="/" class="app-brand-link d-flex align-items-center">
+                    <span class="app-brand-logo demo me-2 d-flex align-items-center">
+                        <img src="{{ asset('assets/imglogo/logo-sm.png') }}" alt="Nexora Logo" style="height: 34px; width: auto; object-fit: contain;">
                     </span>
-                    <span class="app-brand-text demo text-heading fw-bold ms-2">Nexora</span>
+                    <span class="app-brand-text demo text-heading fw-bold" style="font-size: 24px;">Nexora</span>
                 </a>
             </div>
             <!-- /Logo -->

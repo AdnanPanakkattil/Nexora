@@ -314,7 +314,7 @@ html:not([dir=rtl]) .datepicker table tr td.range-end:not(.range-start) {
   box-shadow: 0 0.1875rem 0.75rem 0 rgba(19, 17, 32, 0.2);
 }
 .dark-style .datepicker table thead {
-  background-color: #2f3349;
+  background-color: #222a3c;
 }
 .dark-style .datepicker table thead tr,
 .dark-style .datepicker table thead td {
@@ -331,7 +331,7 @@ html:not([dir=rtl]) .datepicker table tr td.range-end:not(.range-start) {
   color: #76778e;
 }
 .dark-style .datepicker table tr td.cw {
-  background-color: #2f3349;
+  background-color: #222a3c;
   color: #acabc1;
 }
 .dark-style .datepicker table tr td.day:hover, .dark-style .datepicker table tr td.focused {

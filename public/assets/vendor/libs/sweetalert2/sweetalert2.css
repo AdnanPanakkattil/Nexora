@@ -1227,7 +1227,7 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-end, body.swal2-toast-shown
   z-index: 1091;
 }
 .dark-style .swal2-modal.swal2-popup {
-  background: #2f3349;
+  background: #222a3c;
   font-family: var(--bs-font-sans-serif);
   box-shadow: 0 0.25rem 1.125rem 0 rgba(19, 17, 32, 0.22);
   border-radius: 0.375rem;
@@ -1250,7 +1250,7 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-end, body.swal2-toast-shown
   color: #acabc1;
 }
 .dark-style .swal2-popup .swal2-footer {
-  border-top: 1px solid #44485e;
+  border-top: 1px solid #222a3c;
 }
 .dark-style .swal2-popup .swal2-html-container {
   color: #acabc1;

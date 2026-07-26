@@ -1215,11 +1215,11 @@
 }
 
 .dark-style .pcr-app {
-  background: #2f3349 !important;
+  background: #222a3c !important;
 }
 .dark-style .pcr-app .pcr-type:not(.active),
 .dark-style .pcr-app .pcr-result {
-  background: #2f3349 !important;
+  background: #222a3c !important;
   color: #fff !important;
 }
 .dark-style .pcr-app .pcr-interaction input:focus {

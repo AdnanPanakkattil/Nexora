@@ -237,7 +237,7 @@
   background: #1e2130;
 }
 .dark-style .landing-hero::after {
-  background-color: #2f3349;
+  background-color: #222a3c;
 }
 
 [dir=rtl] .landing-team .team-image-box .card-img-position {

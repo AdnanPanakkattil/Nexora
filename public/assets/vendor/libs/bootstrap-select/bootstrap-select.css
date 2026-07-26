@@ -594,7 +594,7 @@ html[class] .bootstrap-select.form-select {
   box-shadow: 0 -0.2rem 1.25rem rgba(15, 20, 34, 0.55);
 }
 .dark-style .bootstrap-select .dropdown-menu .notify {
-  background: #2f3349;
+  background: #222a3c;
   border: var(--bs-border-width) solid var(--bs-border-color-translucent);
 }
 .dark-style .bootstrap-select .dropdown-menu .popover-header button {

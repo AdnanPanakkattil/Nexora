@@ -436,18 +436,18 @@ button.list-group-item-primary.active {
 .table-primary {
   --bs-table-bg: #fbd8e5;
   --bs-table-striped-bg: #efcedc;
-  --bs-table-striped-color: #2f3349;
+  --bs-table-striped-color: #222a3c;
   --bs-table-active-bg: #ebcbd9;
-  --bs-table-active-color: #2f3349;
+  --bs-table-active-color: #222a3c;
   --bs-table-hover-bg: #efcedc;
-  --bs-table-hover-color: #2f3349;
-  color: #2f3349;
+  --bs-table-hover-color: #222a3c;
+  color: #222a3c;
   border-color: #e3c4d2;
 }
 
 .table-primary .btn-icon,
 .table-primary .btn {
-  color: #2f3349;
+  color: #222a3c;
 }
 
 .btn-primary {
@@ -1182,7 +1182,7 @@ a:hover {
 table.dataTable.dtr-column>tbody>tr>td.control:before,
 table.dataTable.dtr-column>tbody>tr>th.control:before {
   background-color: #e30b5c;
-  border: 2px solid #2f3349;
+  border: 2px solid #222a3c;
   box-shadow: 0 0 3px rgba(225, 222, 245, 0.8);
 }
 
@@ -1689,7 +1689,7 @@ li.ui-timepicker-selected,
 }
 
 .bg-navbar-theme {
-  background-color: rgba(47, 51, 73, 0.88) !important;
+  background-color: #222a3c !important;
   color: #cfcde4;
 }
 
@@ -1712,7 +1712,7 @@ li.ui-timepicker-selected,
 
 .bg-navbar-theme .search-input-wrapper .search-input,
 .bg-navbar-theme .search-input-wrapper .search-toggler {
-  background-color: #2f3349 !important;
+  background-color: #222a3c !important;
   color: #cfcde4;
 }
 
@@ -1771,7 +1771,7 @@ li.ui-timepicker-selected,
 }
 
 .layout-navbar {
-  box-shadow: 0 1px 0 #44485e;
+  box-shadow: 0 1px 0 #222a3c;
   backdrop-filter: saturate(200%) blur(6px);
 }
 
@@ -1791,7 +1791,7 @@ li.ui-timepicker-selected,
 }
 
 .layout-horizontal .layout-navbar {
-  box-shadow: 0 1px 0 #44485e;
+  box-shadow: 0 1px 0 #222a3c;
 }
 
 .bg-menu-theme {
@@ -1871,7 +1871,7 @@ li.ui-timepicker-selected,
 
 .bg-menu-theme.menu-horizontal .menu-inner .menu-item:not(.menu-item-closing)>.menu-sub,
 .bg-menu-theme.menu-horizontal .menu-inner .menu-item.open>.menu-toggle {
-  background: #2f3349;
+  background: #222a3c;
 }
 
 .bg-menu-theme.menu-horizontal .menu-item.active>.menu-link:not(.menu-toggle) {
@@ -1886,7 +1886,7 @@ li.ui-timepicker-selected,
 }
 
 .bg-menu-theme .menu-inner-shadow {
-  background: linear-gradient(#2f3349 41%, rgba(47, 51, 73, 0.11) 95%, rgba(47, 51, 73, 0));
+  background: linear-gradient(#222a3c 41%, rgba(47, 51, 73, 0.11) 95%, rgba(47, 51, 73, 0));
 }
 
 .bg-menu-theme .menu-text {
@@ -1929,11 +1929,11 @@ html:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item:not(.acti
 }
 
 .layout-menu {
-  box-shadow: 0 0 0 1px #44485e;
+  box-shadow: 0 0 0 1px #222a3c;
 }
 
 .layout-menu-horizontal {
-  box-shadow: 0 -1px 0 #44485e inset;
+  box-shadow: 0 -1px 0 #222a3c inset;
 }
 
 .timeline .timeline-item .timeline-event:after {
@@ -1945,11 +1945,11 @@ html:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item:not(.acti
 }
 
 .layout-footer-fixed .layout-horizontal .bg-footer-theme {
-  background-color: #2f3349 !important;
+  background-color: #222a3c !important;
 }
 
 .layout-footer-fixed .layout-wrapper:not(.layout-horizontal) .bg-footer-theme .footer-container {
-  background-color: #2f3349 !important;
+  background-color: #222a3c !important;
 }
 
 .bg-footer-theme .footer-link {
@@ -1987,15 +1987,15 @@ html:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item:not(.acti
 
 .card {
   box-shadow: none;
-  border: 1px solid #44485e;
+  border: 1px solid #222a3c;
 }
 
 .accordion .accordion-item {
-  border-top: var(--bs-border-width) solid #44485e;
+  border-top: var(--bs-border-width) solid #222a3c;
 }
 
 .bs-stepper:not(.wizard-modern) {
-  border: 1px solid #44485e;
+  border: 1px solid #222a3c;
   border-radius: 0.375rem;
 }
 
@@ -2005,6 +2005,6 @@ html:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item:not(.acti
 
 .bs-stepper.wizard-modern .bs-stepper-content {
   box-shadow: none !important;
-  border: 1px solid #44485e;
+  border: 1px solid #222a3c;
   border-radius: 0.375rem;
 }
