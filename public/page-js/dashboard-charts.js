@@ -74,19 +74,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 data: [3.4, 5.2, 8.0, 11.1, 7.0, 5.7, 4.3, 3.4, 2.5, 1.5, 1.0, 0.7]
             }
         ],
-        chart: {
-            height: 285,
-            type: 'bar',
-            toolbar: { show: false },
-            dropShadow: {
-                enabled: true,
-                top: 4,
-                left: 0,
-                blur: 5,
-                color: '#ab7df6',
-                opacity: 0.3
-            }
-        },
+       chart: {
+    height: '100%',   // was: 205
+    type: 'bar',
+    toolbar: { show: false },
+    dropShadow: {
+        enabled: true,
+        top: 4,
+        left: 0,
+        blur: 5,
+        color: '#ab7df6',
+        opacity: 0.3
+    }
+},
         colors: ['#ab7df6'],
         plotOptions: {
             bar: {

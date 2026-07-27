@@ -4,7 +4,7 @@
     <!-- Hamburger Toggle -->
     <div class="layout-menu-toggle navbar-nav align-items-center me-3">
       <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-        <i class="ti ti-menu-2 ti-md text-muted"></i>
+        <i class="fa-solid fa-bars"></i>
       </a>
     </div>
 
