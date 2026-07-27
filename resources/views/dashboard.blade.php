@@ -145,7 +145,7 @@
     /* ===== New bottom-section styles ===== */
     .table-actions {
         white-space: nowrap;
-        min-width: 120px;
+        min-width: 90px;
     }
 
     .table-actions .btn {
@@ -165,7 +165,32 @@
     }
 
     .table-clean {
-        min-width: 640px;
+        min-width: 520px;
+    }
+
+    /* Smooth horizontal scroll for responsive tables */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    .table-responsive::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .table-responsive::-webkit-scrollbar-track {
+        background: #f5f5f5;
+        border-radius: 4px;
+    }
+
+    .table-responsive::-webkit-scrollbar-thumb {
+        background: #d1d5db;
+        border-radius: 4px;
+    }
+
+    .table-responsive::-webkit-scrollbar-thumb:hover {
+        background: #9ca3af;
     }
 
     .btn-icon-soft-success {
@@ -286,7 +311,7 @@
        amount/price out of vertical center awkwardly */
     .list-row {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-between;
         gap: 0.5rem;
         margin-bottom: 1rem;
@@ -298,23 +323,53 @@
 
     .list-row .list-row-left {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         min-width: 0;
         flex: 1 1 auto;
         gap: 0.5rem;
+        overflow: hidden;
     }
 
     .list-row .list-row-right {
         flex-shrink: 0;
         white-space: nowrap;
-        padding-top: 2px;
+        padding-top: 0;
     }
 
-    .list-row h6,
+    .list-row h6 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
     .list-row small {
-        white-space: normal;
-        overflow: visible;
-        word-break: break-word;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        display: block;
+    }
+
+    /* Country list row: progress bar takes available space */
+    .country-list-right {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-shrink: 0;
+    }
+    /* Adjust progress bar dynamically so it fits even when sidebar toggles */
+    .country-progress {
+        width: 55px;
+        flex-shrink: 0;
+    }
+
+    .country-pct {
+        color: #4f46e5;
+        min-width: 28px;
+        font-size: 13px;
+        font-weight: 500;
+        text-align: right;
     }
 
     /* Badges (Top Seller / Trending / Fast Growth / Growing /
@@ -324,7 +379,7 @@
     .list-row-right.badge-wrap {
         white-space: normal;
         text-align: right;
-        max-width: 90px;
+        max-width: 80px;
         line-height: 1.3;
     }
 
@@ -346,9 +401,27 @@
     /* ===================================================== */
     /* FIX 3: Full responsiveness                            */
     /* ===================================================== */
+    @media (min-width: 1400px) {
+        .country-progress {
+            width: 75px;
+        }
+    }
+
+    @media (max-width: 1199.98px) {
+        .country-progress {
+            width: 45px;
+        }
+    }
+
     @media (max-width: 991.98px) {
         .welcome-illustration {
             width: 170px;
+        }
+
+        /* On md screens the 3-col cards become 2-col (md-6),
+           progress bar can be a bit narrower */
+        .country-progress {
+            width: 70px;
         }
     }
 
@@ -359,6 +432,16 @@
 
         .card-header {
             padding: 0.85rem 1rem;
+        }
+
+        /* Tablet: reduce min-width so tables fit more naturally */
+        .table-clean {
+            min-width: 420px;
+        }
+
+        /* Tablet: make progress bar slightly narrower */
+        .country-progress {
+            width: 60px;
         }
     }
 
@@ -385,6 +468,22 @@
 
         .card-body {
             padding: 0.9rem;
+        }
+
+        /* Hide less critical columns on mobile to reduce scroll */
+        .table-hide-mobile {
+            display: none !important;
+        }
+
+        /* Mobile: shrink progress bar further */
+        .country-progress {
+            width: 50px;
+        }
+
+        /* Mobile: slightly smaller list row gap */
+        .list-row {
+            gap: 0.4rem;
+            margin-bottom: 0.75rem;
         }
     }
 
@@ -613,7 +712,7 @@
                 </div>
 
                 {{-- Sales by Country --}}
-                <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                <div class="col-12 col-md-6 col-xxl-4">
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0 fw-bold">Sales by Country</h5>
@@ -631,20 +730,22 @@
                             ['name' => 'United Kingdom', 'flag' => 'gb', 'percent' => 54, 'color' => 'bg-danger'],
                             ['name' => 'Italy', 'flag' => 'it', 'percent' => 64, 'color' => 'bg-primary'],
                             ['name' => 'Italy', 'flag' => 'it', 'percent' => 64, 'color' => 'bg-primary'],
+                            ['name' => 'Italy', 'flag' => 'it', 'percent' => 64, 'color' => 'bg-primary'],
+                            ['name' => 'Italy', 'flag' => 'it', 'percent' => 64, 'color' => 'bg-primary'],
                             ];
                             @endphp
                             <div class="scroll-list-7">
                                 @foreach ($countries as $country)
                                 <div class="list-row">
                                     <div class="list-row-left">
-                                        <img src="https://flagcdn.com/w80/{{ $country['flag'] }}.png" class="avatar-round" alt="{{ $country['name'] }}">
-                                        <div class="min-w-0 d-flex align-items-center">
+                                        <img src="https://flagcdn.com/w80/{{ $country['flag'] }}.png" class="avatar-round flex-shrink-0" alt="{{ $country['name'] }}" style="width:28px;height:28px;">
+                                        <div class="min-w-0">
                                             <h6 class="mb-0 fs-14">{{ $country['name'] }}</h6>
                                         </div>
                                     </div>
-                                    <div class="list-row-right d-flex align-items-center gap-3">
-                                        <span class="fs-14" style="color:#4f46e5; min-width: 34px;">{{ $country['percent'] }}%</span>
-                                        <div class="progress progress-thin" style="width: 120px;">
+                                    <div class="country-list-right">
+                                        <span class="country-pct">{{ $country['percent'] }}%</span>
+                                        <div class="progress progress-thin country-progress">
                                             <div class="progress-bar {{ $country['color'] }}" style="width: {{ $country['percent'] }}%"></div>
                                         </div>
                                     </div>
@@ -656,7 +757,7 @@
                 </div>
 
                 {{-- Top Products --}}
-                <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                <div class="col-12 col-md-6 col-xxl-4">
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0 fw-bold">Top Products</h5>
@@ -702,7 +803,7 @@
                 </div>
 
                 {{-- Top Customers --}}
-                <div class="col-12 col-lg-12 col-xl-4">
+                <div class="col-12 col-md-12 col-xxl-4">
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0 fw-bold">Top Customers</h5>
@@ -715,6 +816,9 @@
                             ['name' => 'Emma Wilson', 'type' => 'Premium Customer', 'orders' => 28, 'amount' => '$9,750'],
                             ['name' => 'Liam Johnson', 'type' => 'Regular Customer', 'orders' => 20, 'amount' => '$5,400'],
                             ['name' => 'Sophia Lee', 'type' => 'Premium Customer', 'orders' => 18, 'amount' => '$6,100'],
+                            ['name' => 'Noah Smith', 'type' => 'Regular Customer', 'orders' => 12, 'amount' => '$2,750'],
+                            ['name' => 'Noah Smith', 'type' => 'Regular Customer', 'orders' => 12, 'amount' => '$2,750'],
+                            ['name' => 'Noah Smith', 'type' => 'Regular Customer', 'orders' => 12, 'amount' => '$2,750'],
                             ['name' => 'Noah Smith', 'type' => 'Regular Customer', 'orders' => 12, 'amount' => '$2,750'],
                             ];
                             @endphp
@@ -743,35 +847,53 @@
         {{-- RIGHT SIDEBAR --}}
         <div class="col-12 col-xl-3">
             <div class="card h-100">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0 fw-bold">Platforms</h5>
+                    <a href="javascript:void(0)" class="fs-13">See All <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title mb-4 fw-bold">Platforms :</h5>
 
                     @php
                     $platforms = [
-                    ['name' => 'Amazon', 'icon' => 'fa-brands fa-amazon', 'iconClass' => 'pf-amazon', 'orders' => '12.43k Orders', 'progress' => '45% Progress', 'badge' => 'Top Seller', 'badgeClass' => 'badge-soft-success'],
-                    ['name' => 'eBay', 'icon' => 'fa-brands fa-ebay', 'iconClass' => 'pf-ebay', 'orders' => '8.92k Orders', 'progress' => '32% Progress', 'badge' => 'Trending', 'badgeClass' => 'badge-soft-info'],
-                    ['name' => 'Shopify', 'icon' => 'fa-brands fa-shopify', 'iconClass' => 'pf-shopify', 'orders' => '6.14k Orders', 'progress' => '25% Progress', 'badge' => 'FastGrowt', 'badgeClass' => 'badge-soft-warning'],
-                    ['name' => 'Flipkart', 'icon' => 'fa-solid fa-cart-shopping', 'iconClass' => 'pf-flipkart', 'orders' => '4.85k Orders', 'progress' => '18% Progress', 'badge' => 'Growing', 'badgeClass' => 'badge-soft-info'],
-                    ['name' => 'Walmart', 'icon' => 'fa-solid fa-store', 'iconClass' => 'pf-walmart', 'orders' => '7.56k Orders', 'progress' => '28% Progress', 'badge' => 'Low Stock', 'badgeClass' => 'badge-soft-danger'],
+                        ['name' => 'Amazon',  'icon' => 'fa-brands fa-amazon',       'iconClass' => 'pf-amazon',  'orders' => '12.43k', 'pct' => 45, 'badge' => 'Top Seller',  'badgeClass' => 'badge-soft-success'],
+                        ['name' => 'eBay',    'icon' => 'fa-brands fa-ebay',          'iconClass' => 'pf-ebay',    'orders' => '8.92k',  'pct' => 32, 'badge' => 'Trending',    'badgeClass' => 'badge-soft-info'],
+                        ['name' => 'Shopify', 'icon' => 'fa-brands fa-shopify',       'iconClass' => 'pf-shopify', 'orders' => '6.14k',  'pct' => 25, 'badge' => 'Fast Growth', 'badgeClass' => 'badge-soft-warning'],
+                        ['name' => 'Flipkart','icon' => 'fa-solid fa-cart-shopping',  'iconClass' => 'pf-flipkart','orders' => '4.85k',  'pct' => 18, 'badge' => 'Growing',     'badgeClass' => 'badge-soft-info'],
+                        ['name' => 'Walmart', 'icon' => 'fa-solid fa-store',          'iconClass' => 'pf-walmart', 'orders' => '7.56k',  'pct' => 28, 'badge' => 'Low Stock',   'badgeClass' => 'badge-soft-danger'],
                     ];
                     @endphp
 
                     @foreach ($platforms as $platform)
-                    <div class="list-row">
-                        <div class="list-row-left">
-                            <div class="platform-icon {{ $platform['iconClass'] }}">
-                                <i class="{{ $platform['icon'] }}"></i>
+                    <div class="mb-3">
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <div class="d-flex align-items-center gap-2 min-w-0">
+                                <div class="platform-icon {{ $platform['iconClass'] }} flex-shrink-0">
+                                    <i class="{{ $platform['icon'] }}"></i>
+                                </div>
+                                <div class="min-w-0">
+                                    <h6 class="mb-0 fs-14 fw-semibold">{{ $platform['name'] }}</h6>
+                                    <small class="text-muted">{{ $platform['orders'] }} Orders</small>
+                                </div>
                             </div>
-                            <div class="min-w-0">
-                                <h6 class="mb-0 fs-14">{{ $platform['name'] }}</h6>
-                                <small class="text-muted">{{ $platform['orders'] }} &middot; {{ $platform['progress'] }}</small>
-                            </div>
+                            <span class="badge {{ $platform['badgeClass'] }} fs-11 flex-shrink-0 ms-1">{{ $platform['badge'] }}</span>
                         </div>
-                        <span class="badge {{ $platform['badgeClass'] }} fs-11 list-row-right badge-wrap">{{ $platform['badge'] }}</span>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="progress progress-thin flex-grow-1">
+                                <div class="progress-bar
+                                    @if($platform['pct'] >= 40) bg-primary
+                                    @elseif($platform['pct'] >= 28) bg-teal
+                                    @elseif($platform['pct'] >= 20) bg-warning
+                                    @else bg-info
+                                    @endif"
+                                    style="width: {{ $platform['pct'] }}%">
+                                </div>
+                            </div>
+                            <span class="text-muted fw-medium" style="font-size:12px; min-width:26px; text-align:right;">{{ $platform['pct'] }}%</span>
+                        </div>
                     </div>
                     @endforeach
 
-                    <hr>
+                    <hr class="my-3">
 
                     <h6 class="fw-bold mb-1">Order Statistics :</h6>
                     <div class="d-flex align-items-center justify-content-between mb-2">
@@ -782,22 +904,30 @@
                     <div id="orderStatusChart"></div>
 
                     <h6 class="fw-bold mb-3 mt-4">Quick Transaction :</h6>
-                    <div class="d-flex align-items-center mb-3 flex-wrap gap-2">
-                        @foreach ($customers as $qc)
-                        <img src="https://ui-avatars.com/api/?name={{ urlencode($qc['name']) }}&background=random&rounded=true&size=64"
-                            class="avatar-round" alt="{{ $qc['name'] }}">
-                        @endforeach
-                        <div class="avatar-round border d-flex align-items-center justify-content-center">
-                            <i class="fa-solid fa-plus"></i>
+                    <div class="d-flex align-items-center mb-3 gap-2 overflow-auto" style="scrollbar-width: none; -ms-overflow-style: none;">
+                        <style>
+                            .quick-tx-avatars::-webkit-scrollbar { display: none; }
+                        </style>
+                        <div class="d-flex align-items-center gap-2 quick-tx-avatars flex-nowrap overflow-auto py-1" style="scrollbar-width: none; -ms-overflow-style: none;">
+                            @foreach ($customers as $qc)
+                            <img src="https://ui-avatars.com/api/?name={{ urlencode($qc['name']) }}&background=random&rounded=true&size=64"
+                                class="avatar-round flex-shrink-0" alt="{{ $qc['name'] }}">
+                            @endforeach
+                            <div class="avatar-round border d-flex align-items-center justify-content-center flex-shrink-0 bg-light text-muted" style="cursor: pointer;">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
                         </div>
                     </div>
                     <label class="form-label fs-13 text-muted">Select Client</label>
-                    <select class="select2 form-select-sm mb-3">
+                    <div>
+   <select class="select2 form-select-sm mb-3 w-100">
                         <option selected disabled>Choose client...</option>
                         @foreach ($customers as $qc)
                         <option>{{ $qc['name'] }}</option>
                         @endforeach
                     </select>
+                    </div>
+                 
                     <button type="button" class="btn btn-primary w-100">Transfer Now</button>
                 </div>
             </div>
@@ -808,10 +938,10 @@
     {{-- ============================================================ --}}
     {{-- BOTTOM SECTION - Revenue Statistics / Top Selling / Orders   --}}
     {{-- ============================================================ --}}
-    <div class="row g-3 g-lg-4 mt-1">
+    <div class="row g-3 g-lg-4 mt-1" id="bottom-section">
 
         {{-- Revenue Statistics --}}
-        <div class="col-12 col-xl-6">
+        <div class="col-12 col-lg-6">
             <div class="card h-100">
                 <div class="card-header d-flex flex-wrap gap-2 justify-content-between align-items-center">
                     <h5 class="mb-0 fw-bold">Revenue Statistics</h5>
@@ -841,7 +971,7 @@
         </div>
 
         {{-- Top Selling Products --}}
-        <div class="col-12 col-xl-6">
+        <div class="col-12 col-lg-6">
             <div class="card h-100">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="mb-0 fw-bold">Top Selling Products</h5>
@@ -865,9 +995,9 @@
                             <thead>
                                 <tr>
                                     <th>Product</th>
-                                    <th>Category</th>
+                                    <th class="table-hide-mobile">Category</th>
                                     <th>Status</th>
-                                    <th>Units Sold</th>
+                                    <th class="table-hide-mobile">Units Sold</th>
                                     <th>Revenue</th>
                                     <th class="text-end">Actions</th>
                                 </tr>
@@ -883,11 +1013,11 @@
                                             <span class="fw-medium fs-14">{{ $p['name'] }}</span>
                                         </div>
                                     </td>
-                                    <td class="text-muted fs-14">{{ $p['cat'] }}</td>
+                                    <td class="text-muted fs-14 table-hide-mobile">{{ $p['cat'] }}</td>
                                     <td>
                                         <span class="status-pill status-{{ Str::slug($p['status']) }}">{{ $p['status'] }}</span>
                                     </td>
-                                    <td class="fs-14">{{ $p['units'] }}</td>
+                                    <td class="fs-14 table-hide-mobile">{{ $p['units'] }}</td>
                                     <td class="fw-medium fs-14">{{ $p['revenue'] }}</td>
                                     <td class="text-end table-actions">
                                         <button class="btn btn-icon-soft-primary"><i class="fa-solid fa-eye"></i></button>
@@ -916,7 +1046,7 @@
         </div>
 
         {{-- Recent Orders --}}
-        <div class="col-12 col-xl-5">
+        <div class="col-12 col-xl-5 col-xxl-5">
             <div class="card h-100">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="mb-0 fw-bold">Recent Orders</h5>
@@ -937,9 +1067,9 @@
                             <thead>
                                 <tr>
                                     <th>Customer</th>
-                                    <th>Product</th>
+                                    <th class="table-hide-mobile">Product</th>
                                     <th>Status</th>
-                                    <th>Date</th>
+                                    <th class="table-hide-mobile">Date</th>
                                     <th class="text-end">Actions</th>
                                 </tr>
                             </thead>
@@ -953,11 +1083,11 @@
                                             <span class="fw-medium fs-14">{{ $o['name'] }}</span>
                                         </div>
                                     </td>
-                                    <td class="text-muted fs-14">{{ $o['product'] }}</td>
+                                    <td class="text-muted fs-14 table-hide-mobile">{{ $o['product'] }}</td>
                                     <td>
                                         <span class="status-pill status-{{ Str::slug($o['status']) }}">{{ $o['status'] }}</span>
                                     </td>
-                                    <td class="text-muted fs-14">{{ $o['date'] }}</td>
+                                    <td class="text-muted fs-14 table-hide-mobile">{{ $o['date'] }}</td>
                                     <td class="text-end table-actions">
                                         <button class="btn btn-icon-soft-primary"><i class="fa-solid fa-check"></i></button>
                                         <button class="btn btn-icon-soft-danger"><i class="fa-solid fa-xmark"></i></button>
