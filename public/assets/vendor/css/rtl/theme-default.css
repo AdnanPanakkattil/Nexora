@@ -457,7 +457,7 @@ button.list-group-item-primary.active {
 }
 
 .btn-primary.btn[class*=btn-]:not([class*=btn-label-]):not([class*=btn-outline-]):not([class*=btn-text-]):not(.btn-icon):not(:disabled):not(.disabled) {
-  box-shadow: 0 0.125rem 0.375rem 0 rgba(115, 103, 240, 0.3);
+  box-shadow: 0 0.125rem 0.375rem 0 rgba(222, 103, 240, 0.3);
 }
 
 .btn-primary:hover {
@@ -471,7 +471,7 @@ button.list-group-item-primary.active {
 .btn-primary.focus {
   color: #fff;
   background-color: #a47bc8;
-  border-color: #685dd8;
+  border-color: rgba(191, 93, 216, 0.871);
 }
 
 .btn-check:checked+.btn-primary,

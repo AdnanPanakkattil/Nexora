@@ -23,152 +23,158 @@
     }
 
     /* uplode image start */
-.upload-wrapper{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    .upload-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-    border:2px dashed #c9b5ff;
-    border-radius:18px;
+        border: 2px dashed #c9b5ff;
+        border-radius: 18px;
 
-    background:linear-gradient(135deg,#faf8ff,#ffffff);
+        background: linear-gradient(135deg, #faf8ff, #ffffff);
 
-    padding:40px;
-    min-height:250px;
-}
+        padding: 40px;
+        min-height: 250px;
+    }
 
-.upload-left{
-    width:60%;
-}
+    .upload-left {
+        width: 60%;
+    }
 
-.upload-content{
-    cursor:pointer;
-    text-align:center;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
+    .upload-content {
+        cursor: pointer;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.upload-icon{
-    font-size:65px;
-    color:#7c4dff;
-    margin-bottom:15px;
-}
+    .upload-icon {
+        font-size: 65px;
+        color: #a47bc8;
+        margin-bottom: 15px;
+    }
 
-.upload-content h5{
-    font-weight:700;
-    color:#222;
-}
+    .upload-content h5 {
+        font-weight: 700;
+        color: #222;
+    }
 
-.upload-content p{
-    color:#777;
-    margin-bottom:5px;
-}
+    .upload-content p {
+        color: #777;
+        margin-bottom: 5px;
+    }
 
-.upload-content small{
-    color:#999;
-}
+    .upload-content small {
+        color: #999;
+    }
 
-.browse-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
+    .browse-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
 
-    padding:12px 25px;
+        padding: 12px 25px;
 
-    background:#6f42ff;
-    color:#fff;
+        background: #969696;
+        color: #fff;
 
-    border-radius:10px;
-    font-weight:600;
+        border-radius: 10px;
+        font-weight: 600;
 
-    transition:.3s;
-}
+        transition: .3s;
+    }
 
-.browse-btn:hover{
-    background:#5a32d4;
-}
+    /* Right */
 
-/* Right */
+    .preview-right {
+        width: 35%;
+        display: flex;
+        justify-content: center;
+    }
 
-.preview-right{
-    width:35%;
-    display:flex;
-    justify-content:center;
-}
+    .preview-container {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: auto;
+    }
 
-.preview-container{
-    position:relative;
-    width:180px;
-    height:180px;
-}
+    .preview-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
 
-.preview-circle{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    background:#f4efff;
-    border:8px solid white;
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
-    overflow:hidden;
-}
+    .preview-circle {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #f4efff;
+        border: 8px solid white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+        overflow: hidden;
+    }
 
-.preview-image{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:50%;
-}
+    .preview-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
 
-.placeholder-avatar{
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:60px;
-    color:#b7a8ff;
-}
+    .placeholder-avatar {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 60px;
+        color: #ffffff;
+    }
 
-.remove-image{
-    position:absolute;
-    top:2px;
-    right:2px;
-    width:42px;
-    height:42px;
-    border:none;
-    border-radius:50%;
-    background:#ff3b5c;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    box-shadow:0 8px 20px rgba(255,59,92,.35);
-    z-index:10;
-    cursor:pointer;
-    transition:.2s ease;
-}
+    .remove-image {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        width: 42px;
+        height: 42px;
+        border: none;
+        border-radius: 50%;
+        background: #ff3b5c;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 8px 20px rgba(255, 59, 92, .35);
+        z-index: 10;
+        cursor: pointer;
+        transition: .2s ease;
+    }
 
-.remove-image:hover{
-    transform:scale(1.1);
-}
+    .remove-image:hover {
+        transform: scale(1.1);
+    }
 
 
-/* Responsive */
+    /* Responsive */
 
-@media(max-width:768px){
+    @media(max-width:768px) {
 
-.upload-wrapper{
-    flex-direction:column;
-    gap:30px;
-}
+        .upload-wrapper {
+            flex-direction: column;
+            gap: 30px;
+        }
 
-.upload-left,
-.preview-right{
-    width:100%;
-}
+        .upload-left,
+        .preview-right {
+            width: 100%;
+        }
 
-}
+    }
 
     /* uplode image end  */
 </style>
@@ -252,45 +258,45 @@
                                 Category Image
                             </label>
 
-                           <div class="upload-wrapper">
+                            <div class="upload-wrapper">
 
-    <!-- Left Upload Content -->
-    <div class="upload-left">
-        <input type="file" id="memberPhoto" name="memberPhoto" accept="image/*" hidden>
+                                <!-- Left Upload Content -->
+                                <div class="upload-left">
+                                    <input type="file" id="memberPhoto" name="memberPhoto" accept="image/*" hidden>
 
-        <label for="memberPhoto" class="upload-content" id="uploadContent">
-            <i class="ti ti-cloud-upload upload-icon"></i>
+                                    <label for="memberPhoto" class="upload-content" id="uploadContent">
+                                        <i class="ti ti-cloud-upload upload-icon"></i>
 
-            <h5>Drag & drop an image here</h5>
-            <p>or click to browse</p>
+                                        <h5>Drag & drop an image here</h5>
+                                        <p>or click to browse</p>
 
-            <small>PNG, JPG, WEBP • Max 2MB</small>
+                                        <small>PNG, JPG, WEBP • Max 2MB</small>
 
-            <div class="browse-btn mt-3">
-                <i class="ti ti-folder"></i>
-                Browse Files
-            </div>
-        </label>
-        <span class="text-danger error-text memberPhoto_error mt-2 d-block text-center"></span>
-    </div>
+                                        <div class="browse-btn mt-3">
+                                            <i class="ti ti-folder"></i>
+                                            Browse Files
+                                        </div>
+                                    </label>
+                                    <span class="text-danger error-text memberPhoto_error mt-2 d-block text-center"></span>
+                                </div>
 
-    <!-- Right Preview -->
-    <div class="preview-right">
-        <div class="preview-container">
-            <div class="preview-circle">
-                <img id="imagePreview" class="preview-image d-none">
-                <div class="placeholder-avatar" id="avatarPlaceholder">
-                    <i class="ti ti-photo"></i>
-                </div>
-            </div>
-            <button type="button" id="removeImage" class="remove-image d-none">
-                <i class="ti ti-trash"></i>
-            </button>
-        </div>
-    </div>
+                                <!-- Right Preview -->
+                                <div class="preview-right">
+                                    <div class="preview-container">
+                                        <div class="preview-circle">
+                                            <img id="imagePreview" class="preview-image d-none">
+                                            <div class="placeholder-avatar" id="avatarPlaceholder">
+                                                <i class="ti ti-photo"></i>
+                                            </div>
+                                        </div>
+                                        <button type="button" id="removeImage" class="remove-image d-none">
+                                            <i class="ti ti-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
 
 
-</div>
+                            </div>
 
                         </div>
                         <div class="col-md-6">

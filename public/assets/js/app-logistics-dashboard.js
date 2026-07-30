@@ -31,146 +31,146 @@
       series1: config.colors.warning,
       series2: config.colors.primary,
       series2: config.colors.danger,
-      series3: '#7367f029'
+      series3: '#a47bc829'
     }
   };
 
   // Shipment statistics Chart
   // --------------------------------------------------------------------
   const shipmentEl = document.querySelector('#shipmentStatisticsChart'),
-  shipmentConfig = {
-    series: [
-      {
-        name: 'B2B',
-        type: 'line',
-        data: [38, 45, 33, 38, 32, 50, 48, 40, 42, 37]
-      },
-      {
-        name: 'B2c',
-        type: 'line',
-        data: [23, 28, 23, 32, 28, 44, 32, 38, 26, 34]
-      }
-    ],
-    chart: {
-      height: 320,
-      type: 'line',
-      stacked: false,
-      parentHeightOffset: 0,
-      toolbar: { show: false },
-      zoom: { enabled: false }
-    },
-    markers: {
-      size: 5,
-      colors: [config.colors.white],
-      strokeColors: [chartColors.line.series2, config.colors.success],
-      hover: { size: 6 },
-      borderRadius: 4
-    },
-    stroke: {
-      curve: 'smooth',
-      width: [3, 3],
-      lineCap: 'round'
-    },
-    legend: {
-      show: true,
-      position: 'bottom',
-      markers: {
-        width: 8,
-        height: 8,
-        offsetX: -3
-      },
-      height: 40,
-      itemMargin: {
-        horizontal: 10,
-        vertical: 0
-      },
-      fontSize: '15px',
-      fontFamily: 'Public Sans',
-      fontWeight: 400,
-      labels: {
-        colors: headingColor,
-        useSeriesColors: false
-      },
-      offsetY: 10
-    },
-    grid: {
-      strokeDashArray: 8,
-      borderColor
-    },
-    colors: [chartColors.line.series2, config.colors.success],
-    fill: {
-      opacity: [1, 1]
-    },
-    xaxis: {
-      tickAmount: 10,
-      categories: ['1 Jan', '2 Jan', '3 Jan', '4 Jan', '5 Jan', '6 Jan', '7 Jan', '8 Jan', '9 Jan', '10 Jan'],
-      labels: {
-        style: {
-          colors: labelColor,
-          fontSize: '13px',
-          fontWeight: 400
-        }
-      },
-      axisBorder: { show: false },
-      axisTicks: { show: false }
-    },
-    yaxis: {
-      tickAmount: 4,
-      min: 0,
-      max: 50,
-      labels: {
-        style: {
-          colors: labelColor,
-          fontSize: '13px',
-          fontFamily: 'Public Sans',
-          fontWeight: 400
+    shipmentConfig = {
+      series: [
+        {
+          name: 'B2B',
+          type: 'line',
+          data: [38, 45, 33, 38, 32, 50, 48, 40, 42, 37]
         },
-        formatter: function (val) {
-          return val + '%';
+        {
+          name: 'B2c',
+          type: 'line',
+          data: [23, 28, 23, 32, 28, 44, 32, 38, 26, 34]
         }
-      }
-    },
-    responsive: [
-      {
-        breakpoint: 1400,
-        options: {
-          chart: { height: 320 },
-          xaxis: { labels: { style: { fontSize: '10px' } } },
-          legend: {
-            itemMargin: {
-              vertical: 0,
-              horizontal: 10
-            },
+      ],
+      chart: {
+        height: 320,
+        type: 'line',
+        stacked: false,
+        parentHeightOffset: 0,
+        toolbar: { show: false },
+        zoom: { enabled: false }
+      },
+      markers: {
+        size: 5,
+        colors: [config.colors.white],
+        strokeColors: [chartColors.line.series2, config.colors.success],
+        hover: { size: 6 },
+        borderRadius: 4
+      },
+      stroke: {
+        curve: 'smooth',
+        width: [3, 3],
+        lineCap: 'round'
+      },
+      legend: {
+        show: true,
+        position: 'bottom',
+        markers: {
+          width: 8,
+          height: 8,
+          offsetX: -3
+        },
+        height: 40,
+        itemMargin: {
+          horizontal: 10,
+          vertical: 0
+        },
+        fontSize: '15px',
+        fontFamily: 'Public Sans',
+        fontWeight: 400,
+        labels: {
+          colors: headingColor,
+          useSeriesColors: false
+        },
+        offsetY: 10
+      },
+      grid: {
+        strokeDashArray: 8,
+        borderColor
+      },
+      colors: [chartColors.line.series2, config.colors.success],
+      fill: {
+        opacity: [1, 1]
+      },
+      xaxis: {
+        tickAmount: 10,
+        categories: ['1 Jan', '2 Jan', '3 Jan', '4 Jan', '5 Jan', '6 Jan', '7 Jan', '8 Jan', '9 Jan', '10 Jan'],
+        labels: {
+          style: {
+            colors: labelColor,
             fontSize: '13px',
-            offsetY: 12
+            fontWeight: 400
+          }
+        },
+        axisBorder: { show: false },
+        axisTicks: { show: false }
+      },
+      yaxis: {
+        tickAmount: 4,
+        min: 0,
+        max: 50,
+        labels: {
+          style: {
+            colors: labelColor,
+            fontSize: '13px',
+            fontFamily: 'Public Sans',
+            fontWeight: 400
+          },
+          formatter: function (val) {
+            return val + '%';
           }
         }
       },
-      {
-        breakpoint: 1025,
-        options: {
-          chart: { height: 415 },
-          plotOptions: { bar: { columnWidth: '50%' } }
+      responsive: [
+        {
+          breakpoint: 1400,
+          options: {
+            chart: { height: 320 },
+            xaxis: { labels: { style: { fontSize: '10px' } } },
+            legend: {
+              itemMargin: {
+                vertical: 0,
+                horizontal: 10
+              },
+              fontSize: '13px',
+              offsetY: 12
+            }
+          }
+        },
+        {
+          breakpoint: 1025,
+          options: {
+            chart: { height: 415 },
+            plotOptions: { bar: { columnWidth: '50%' } }
+          }
+        },
+        {
+          breakpoint: 982,
+          options: { plotOptions: { bar: { columnWidth: '30%' } } }
+        },
+        {
+          breakpoint: 480,
+          options: {
+            chart: { height: 250 },
+            legend: { offsetY: 7 }
+          }
         }
-      },
-      {
-        breakpoint: 982,
-        options: { plotOptions: { bar: { columnWidth: '30%' } } }
-      },
-      {
-        breakpoint: 480,
-        options: {
-          chart: { height: 250 },
-          legend: { offsetY: 7 }
-        }
-      }
-    ]
-  };
+      ]
+    };
 
-if (typeof shipmentEl !== undefined && shipmentEl !== null) {
-  const shipment = new ApexCharts(shipmentEl, shipmentConfig);
-  shipment.render();
-}
+  if (typeof shipmentEl !== undefined && shipmentEl !== null) {
+    const shipment = new ApexCharts(shipmentEl, shipmentConfig);
+    shipment.render();
+  }
 
 
   // Reasons for delivery exceptions Chart
@@ -438,18 +438,18 @@ $(function () {
             var data = $.map(columns, function (col, i) {
               return col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? '<tr data-dt-row="' +
-                    col.rowIndex +
-                    '" data-dt-column="' +
-                    col.columnIndex +
-                    '">' +
-                    '<td>' +
-                    col.title +
-                    ':' +
-                    '</td> ' +
-                    '<td>' +
-                    col.data +
-                    '</td>' +
-                    '</tr>'
+                col.rowIndex +
+                '" data-dt-column="' +
+                col.columnIndex +
+                '">' +
+                '<td>' +
+                col.title +
+                ':' +
+                '</td> ' +
+                '<td>' +
+                col.data +
+                '</td>' +
+                '</tr>'
                 : '';
             }).join('');
 

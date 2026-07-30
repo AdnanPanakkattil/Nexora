@@ -48,6 +48,43 @@
         </li>
       </ul>
 
+      <!-- Sub Categories -->
+      <ul class="menu-sub">
+        <li class="menu-item" id="sub_catogery_sub_menu">
+          <a href="{{ route('Sub-catogery')}}" class="menu-link">
+            <div data-i18n="Sub Categories">Sub Categories</div>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Child Categories -->
+      <ul class="menu-sub">
+        <li class="menu-item" id="sub_catogery_sub_menu">
+          <a href="" class="menu-link">
+            <div data-i18n="Child Categories">Child Categories</div>
+          </a>
+        </li>
+      </ul>
+
+
+      <!-- Unit -->
+      <ul class="menu-sub">
+        <li class="menu-item" id="sub_catogery_sub_menu">
+          <a href="" class="menu-link">
+            <div data-i18n="Unit">Unit</div>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Brand -->
+      <ul class="menu-sub">
+        <li class="menu-item" id="sub_catogery_sub_menu">
+          <a href="" class="menu-link">
+            <div data-i18n="Brand">Brand</div>
+          </a>
+        </li>
+      </ul>
+
     </li>
 
 
