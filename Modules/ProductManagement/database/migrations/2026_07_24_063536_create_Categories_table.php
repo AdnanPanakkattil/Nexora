@@ -15,11 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('name_en');
             $table->string('name_ar');
-            //1= Active  / 0 = Inactive
+            $table->string('image')->nullable();
+            $table->integer('sort_order')->default(0);
+            // 1= Active / 0 = Inactive
             $table->boolean('status')->default(1);
-            // 0= not delete /  1=delete
+            // 0= not delete / 1=delete
             $table->boolean('is_delete')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -31,3 +34,4 @@ return new class extends Migration
         Schema::dropIfExists('Categories');
     }
 };
+

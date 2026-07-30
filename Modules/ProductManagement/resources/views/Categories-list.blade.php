@@ -97,71 +97,62 @@
     justify-content:center;
 }
 
-.preview-circle{
-
+.preview-container{
     position:relative;
-
     width:180px;
     height:180px;
+}
 
+.preview-circle{
+    width:100%;
+    height:100%;
     border-radius:50%;
     background:#f4efff;
-
     border:8px solid white;
-
     box-shadow:0 10px 30px rgba(0,0,0,.12);
-
     overflow:hidden;
 }
 
 .preview-image{
-
     width:100%;
     height:100%;
-
     object-fit:cover;
     border-radius:50%;
 }
 
 .placeholder-avatar{
-
     width:100%;
     height:100%;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     font-size:60px;
     color:#b7a8ff;
 }
 
 .remove-image{
-
     position:absolute;
-
-    top:8px;
-    right:8px;
-
+    top:2px;
+    right:2px;
     width:42px;
     height:42px;
-
     border:none;
     border-radius:50%;
-
     background:#ff3b5c;
     color:white;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     box-shadow:0 8px 20px rgba(255,59,92,.35);
+    z-index:10;
+    cursor:pointer;
+    transition:.2s ease;
 }
 
 .remove-image:hover{
-    transform:scale(1.08);
+    transform:scale(1.1);
 }
+
 
 /* Responsive */
 
@@ -265,7 +256,7 @@
 
     <!-- Left Upload Content -->
     <div class="upload-left">
-        <input type="file" id="memberPhoto" accept="image/*" hidden>
+        <input type="file" id="memberPhoto" name="memberPhoto" accept="image/*" hidden>
 
         <label for="memberPhoto" class="upload-content" id="uploadContent">
             <i class="ti ti-cloud-upload upload-icon"></i>
@@ -280,29 +271,24 @@
                 Browse Files
             </div>
         </label>
+        <span class="text-danger error-text memberPhoto_error mt-2 d-block text-center"></span>
     </div>
 
     <!-- Right Preview -->
     <div class="preview-right">
-
-        <div class="preview-circle">
-
-            <img id="imagePreview"
-                class="preview-image d-none">
-
-            <div class="placeholder-avatar" id="avatarPlaceholder">
-                <i class="ti ti-photo"></i>
+        <div class="preview-container">
+            <div class="preview-circle">
+                <img id="imagePreview" class="preview-image d-none">
+                <div class="placeholder-avatar" id="avatarPlaceholder">
+                    <i class="ti ti-photo"></i>
+                </div>
             </div>
-
-            <button type="button"
-                id="removeImage"
-                class="remove-image d-none">
+            <button type="button" id="removeImage" class="remove-image d-none">
                 <i class="ti ti-trash"></i>
             </button>
-
         </div>
-
     </div>
+
 
 </div>
 
@@ -319,11 +305,11 @@
                         </div>
                     </div>
 
-                    <div class="mt-5" style="display: flex;justify-content: center;">
+                    <div class="mt-5" style="display: flex; justify-content: center; gap: 10px;">
                         <button type="button" class="btn btn-primary" id="CategorySaveBtn">Save</button>
-                        <button type="button" class="btn btn-secondary" id="closebtn">Close</button>
-
+                        <button type="button" class="btn btn-secondary" id="closebtn" data-bs-dismiss="modal">Close</button>
                     </div>
+
                 </form>
             </div>
         </div>
