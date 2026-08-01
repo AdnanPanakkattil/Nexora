@@ -25,16 +25,14 @@
 @endpush
 @section('content')
 
-<div id="loader-overlay">
+<div id="loader-overlay" style="display: none;">
     <div id="loader-center">
-        <div class="sk-chase sk-primary">
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
+        <div class="loader-box">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
+        <div class="mt-2 fw-semibold" style="color: #a47bc8; font-size: 0.88rem; letter-spacing: 0.5px;">Loading...</div>
     </div>
 </div>
 <div class="mt-5">

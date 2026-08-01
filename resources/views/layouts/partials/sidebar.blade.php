@@ -59,8 +59,8 @@
 
       <!-- Child Categories -->
       <ul class="menu-sub">
-        <li class="menu-item" id="sub_catogery_sub_menu">
-          <a href="" class="menu-link">
+        <li class="menu-item" id="Child_categories_sub_menu">
+          <a href="{{ route('child-categories') }}" class="menu-link">
             <div data-i18n="Child Categories">Child Categories</div>
           </a>
         </li>

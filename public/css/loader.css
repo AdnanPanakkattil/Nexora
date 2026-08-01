@@ -1,52 +1,191 @@
+/* ==========================================================================
+   Nexora DataTables & Application Modern Loader System
+   Theme Accent Color: #a47bc8
+   ========================================================================== */
+
+:root {
+  --loader-theme-color: #a47bc8;
+  --loader-theme-glow: rgba(164, 123, 200, 0.4);
+  --loader-theme-gradient: linear-gradient(135deg, #a47bc8, #8c5fb5);
+}
+
+/* --------------------------------------------------------------------------
+   1. DataTables Processing Overlay Styling (#a47bc8)
+   -------------------------------------------------------------------------- */
+.dataTables_wrapper,
+.card-datatable {
+  position: relative !important;
+}
+
+div.dataTables_processing {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+  padding: 16px 28px !important;
+  width: auto !important;
+  min-width: 210px !important;
+  height: auto !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(164, 123, 200, 0.35) !important;
+  box-shadow: 0 12px 32px rgba(164, 123, 200, 0.22), 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+  z-index: 1050 !important;
+  color: #a47bc8 !important;
+  font-weight: 600 !important;
+  font-size: 0.92rem !important;
+  letter-spacing: 0.4px !important;
+  text-align: center;
+}
+
+/* Ensure DataTables hides processing loader when done */
+div.dataTables_processing[style*="display: none"] {
+  display: none !important;
+}
+
+div.dataTables_processing > div:last-child {
+  position: relative !important;
+  width: 70px !important;
+  height: 16px !important;
+  margin: 6px auto 0 auto !important;
+}
+
+div.dataTables_processing > div:last-child > div {
+  position: absolute !important;
+  top: 0 !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  background: #a47bc8 !important;
+  box-shadow: 0 0 12px rgba(164, 123, 200, 0.7) !important;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0) !important;
+}
+
+div.dataTables_processing > div:last-child > div:nth-child(1) {
+  left: 6px !important;
+  animation: datatables-loader-1 0.6s infinite !important;
+}
+
+div.dataTables_processing > div:last-child > div:nth-child(2) {
+  left: 6px !important;
+  animation: datatables-loader-2 0.6s infinite !important;
+}
+
+div.dataTables_processing > div:last-child > div:nth-child(3) {
+  left: 28px !important;
+  animation: datatables-loader-2 0.6s infinite !important;
+}
+
+div.dataTables_processing > div:last-child > div:nth-child(4) {
+  left: 50px !important;
+  animation: datatables-loader-3 0.6s infinite !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. SpinKit Theme Color Override (#a47bc8)
+   -------------------------------------------------------------------------- */
+.sk-primary .sk-chase-dot:before,
+.sk-primary .sk-bounce-dot,
+.sk-primary .sk-wave-rect,
+.sk-primary .sk-pulse,
+.sk-primary .sk-swing-dot,
+.sk-primary .sk-circle-dot:before,
+.sk-primary .sk-circle-fade-dot:before,
+.sk-primary .sk-grid-cube,
+.sk-primary .sk-fold-cube:before {
+  background-color: #a47bc8 !important;
+  box-shadow: 0 0 10px rgba(164, 123, 200, 0.5) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Page & Table Loader Overlays
+   -------------------------------------------------------------------------- */
+#loader-overlay,
 .loader-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Faded backdrop */
-  display: flex;
+  background: rgba(15, 12, 25, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: none;
   justify-content: center;
   align-items: center;
-  z-index: 1050; /* Above content */
+  z-index: 9990;
+  transition: opacity 0.3s ease;
 }
 
+#loader-overlay[style*="display: none"],
+.loader-overlay[style*="display: none"] {
+  display: none !important;
+}
 
-#purchase_table_tbody {
-  position: relative;
+#loader-center,
+.loader-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 36px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(164, 123, 200, 0.35);
+  box-shadow: 0 16px 40px rgba(164, 123, 200, 0.25), 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .table-loader-overlay {
   position: absolute;
-  top: 260px;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 100;
+  border-radius: 12px;
+}
+
+.table-loader-overlay[style*="display: none"] {
+  display: none !important;
 }
 
 /* Loader box container */
 .loader-box {
-  background: #fff;
-  padding: 14px 24px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  padding: 16px 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(164, 123, 200, 0.3);
+  box-shadow: 0 10px 30px rgba(164, 123, 200, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-/* Dots */
+/* Dots bounce animation */
 .dot {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background-color: #a47bc8; /* primary blue */
-  animation: bounce 0.6s infinite alternate;
+  background: linear-gradient(135deg, #a47bc8, #8c5fb5);
+  box-shadow: 0 0 10px rgba(164, 123, 200, 0.6);
+  animation: bounce 0.6s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
 .dot:nth-child(2) {
@@ -57,35 +196,51 @@
   animation-delay: 0.4s;
 }
 
-/* Animation */
 @keyframes bounce {
   from {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.9);
     opacity: 0.6;
   }
   to {
-    transform: translateY(-8px);
+    transform: translateY(-10px) scale(1.1);
     opacity: 1;
+    box-shadow: 0 6px 14px rgba(164, 123, 200, 0.8);
   }
 }
 
-.app-loader {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 9990;
+/* Custom Modern Dual-Ring Spinner */
+.spinner-nexora {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid transparent;
+  border-top-color: #a47bc8;
+  border-bottom-color: #a47bc8;
+  animation: spin-nexora 1s linear infinite;
+  filter: drop-shadow(0 0 6px rgba(164, 123, 200, 0.5));
 }
 
-.app-loader.with-overlay {
-    background: rgba(0, 0, 0, 0.3);
+.spinner-nexora::after {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-left-color: #c9b5ff;
+  border-right-color: #c9b5ff;
+  animation: spin-nexora-reverse 0.6s linear infinite;
 }
 
-.loader-center {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
+@keyframes spin-nexora {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-nexora-reverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
 }
 
 .loading-dots::after {

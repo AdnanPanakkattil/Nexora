@@ -73,7 +73,7 @@ class CategoriesController extends Controller
             $category = new Category();
             $maxOrder = Category::max('sort_order') ?? 0;
             $category->sort_order = $maxOrder + 1;
-            $category->status     = 1;
+            $category->status     = 0;
             $message  = 'Category created successfully.';
         }
 

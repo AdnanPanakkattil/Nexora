@@ -1,4 +1,19 @@
 $(document).ready(function() {
+    // Ensure loader-overlay hides when page finishes loading
+    $("#loader-overlay").fadeOut(200);
+
+    // Automatically hide loaders when DataTables finishes loading/processing data
+    $(document).on('draw.dt xhr.dt init.dt', function () {
+        $("#loader-overlay").fadeOut(200);
+        $('.dataTables_processing').hide();
+    });
+
+    $(document).on('processing.dt', function (e, settings, processing) {
+        if (!processing) {
+            $('.dataTables_processing').hide();
+            $("#loader-overlay").fadeOut(200);
+        }
+    });
 });
 
 

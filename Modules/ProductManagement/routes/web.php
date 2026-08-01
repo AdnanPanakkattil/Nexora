@@ -2,15 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 use Modules\ProductManagement\Http\Controllers\CategoriesController;
+use Modules\ProductManagement\Http\Controllers\ChildCategoriesController;
 use Modules\ProductManagement\Http\Controllers\ProductManagementController;
 use Modules\ProductManagement\Http\Controllers\SubCatogeryController;
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    // product
+
+
+    // ==================== product ======================================================================================================= 
+
     Route::get('/product-list', [ProductManagementController::class, 'index'])->name('product');
     Route::get('/product-add', [ProductManagementController::class, 'create'])->name('product-add');
 
-    // Categories
+    //======================================================================================================================================
+
+    // ===================== Categories =====================================================================================================
+
     Route::get('/Categories-list', [CategoriesController::class, 'index'])->name('Categories-list');
     Route::get('/product-management/categories', [CategoriesController::class, 'getData'])->name('categories.data');
     Route::post('/product-management/categories/store', [CategoriesController::class, 'store'])->name('categories.store');
@@ -19,7 +26,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/product-management/categories/status/{id}', [CategoriesController::class, 'toggleStatus'])->name('categories.status');
     Route::post('/product-management/categories/reorder/{id}', [CategoriesController::class, 'reorder'])->name('categories.reorder');
 
-    // sub Categories
+    //=========================================================================================================================================
+
+
+    // ========================= sub Categories ===============================================================================================
+
     Route::get('/Sub-catogery', [SubCatogeryController::class, 'index'])->name('Sub-catogery');
     Route::get('/product-management/sub-categories', [SubCatogeryController::class, 'getData'])->name('sub-categories.data');
     Route::post('/product-management/sub-categories/store', [SubCatogeryController::class, 'store'])->name('sub-categories.store');
@@ -27,4 +38,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/product-management/sub-categories/delete/{id}', [SubCatogeryController::class, 'destroy'])->name('sub-categories.delete');
     Route::post('/product-management/sub-categories/status/{id}', [SubCatogeryController::class, 'toggleStatus'])->name('sub-categories.status');
     Route::post('/product-management/sub-categories/reorder/{id}', [SubCatogeryController::class, 'reorder'])->name('sub-categories.reorder');
+
+    //==========================================================================================================================================
+
+
+    // ========================= Child Categories ===============================================================================================
+
+    Route::get('/child-categories', [ChildCategoriesController::class, 'index'])->name('child-categories');
+
+    //===========================================================================================================================================
+
 });
