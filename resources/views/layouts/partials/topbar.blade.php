@@ -375,7 +375,7 @@
             <div class="d-flex align-items-center">
               <div class="me-2">
                 <div class="avatar avatar-online">
-                  <img src="../../assets/img/avatars/avatar-3.png" alt class="rounded-circle" />
+                  <img src="../../assets/avathar/Male-Avathar.png" alt class="rounded-circle" />
                 </div>
               </div>
               <div>
