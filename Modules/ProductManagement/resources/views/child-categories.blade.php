@@ -194,13 +194,13 @@
 
     <div class="card">
         <div class="card-datatable table-responsive p-3">
-            <table class="dt-advanced-search table customer-table" id="sub_category_table">
+            <table class="dt-advanced-search table customer-table" id="Child_category_table">
                 <thead>
                     <tr>
                         <th>Id</th>
                         <th>Image</th>
-                        <th>Sub Category (EN)</th>
-                        <th>Sub Category (AR)</th>
+                        <th>Child Category (EN)</th>
+                        <th>Child Category (AR)</th>
                         <th>Parent Category</th>
                         <th>Status</th>
                         <th>Order</th>
@@ -211,8 +211,8 @@
                     <tr>
                         <th>Id</th>
                         <th>Image</th>
-                        <th>Sub Category (EN)</th>
-                        <th>Sub Category (AR)</th>
+                        <th>Child Category (EN)</th>
+                        <th>Child Category (AR)</th>
                         <th>Parent Category</th>
                         <th>Status</th>
                         <th>Order</th>
@@ -234,11 +234,11 @@
             </div>
 
             <div class="modal-body">
-                <form id="addSubCategoryForm">
-                    <input type="hidden" id="sub_category_id">
+                <form id="addChildCategoryForm">
+                    <input type="hidden" id="child_category_id">
 
                     <div class="mb-4">
-                        <label class="form-label fw-semibold">Sub Category Image</label>
+                        <label class="form-label fw-semibold">Child Category Image</label>
                         <div class="upload-wrapper">
                             <!-- Left Upload Content -->
                             <div class="upload-left">
