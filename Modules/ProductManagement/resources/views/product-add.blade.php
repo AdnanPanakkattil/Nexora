@@ -2,26 +2,7 @@
 
 @push('styles')
 <link rel="stylesheet" href="{{ asset('page-css/patient.css') }}">
-<style>
-    #loader-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,.3);
-        z-index: 9990;
-    }
-
-    #loader-center {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-    }
-</style>
+<link rel="stylesheet" href="{{ asset('page-css/productManagement/product-add.css') }}">
 @endpush
 @section('content')
 
