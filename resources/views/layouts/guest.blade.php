@@ -40,13 +40,7 @@
     </head>
     <body>
         <!-- Content -->
-        <div class="container-xxl">
-            <div class="authentication-wrapper authentication-basic container-p-y">
-                <div class="authentication-inner py-6">
-                    {{ $slot }}
-                </div>
-            </div>
-        </div>
+        {{ $slot }}
 
         <!-- Core JS -->
         <script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
