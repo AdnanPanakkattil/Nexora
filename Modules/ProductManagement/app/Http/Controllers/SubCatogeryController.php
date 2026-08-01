@@ -22,15 +22,11 @@ class SubCatogeryController extends Controller
     }
 
     /**
-     * Resequence sort orders so they are strictly 1, 2, 3… without gaps (scoped per category).
+     * Resequence sort orders so they are strictly 1, 2, 3, 4... without gaps.
      */
-    private function resequenceOrders(?int $categoryId = null)
+    private function resequenceOrders()
     {
-        $query = SubCategory::orderBy('sort_order', 'asc')->orderBy('id', 'asc');
-        if ($categoryId) {
-            $query->where('category_id', $categoryId);
-        }
-        $subCategories = $query->get();
+        $subCategories = SubCategory::orderBy('sort_order', 'asc')->orderBy('id', 'asc')->get();
 
         foreach ($subCategories as $index => $sub) {
             $expected = $index + 1;
@@ -46,6 +42,8 @@ class SubCatogeryController extends Controller
      */
     public function getData(Request $request)
     {
+        $this->resequenceOrders();
+
         $categoryId = $request->input('category_id');
 
         $query = SubCategory::with('category')->orderBy('sort_order', 'asc')->orderBy('id', 'asc');
@@ -77,7 +75,7 @@ class SubCatogeryController extends Controller
             $message     = 'Sub Category updated successfully.';
         } else {
             $subCategory             = new SubCategory();
-            $maxOrder                = SubCategory::where('category_id', $request->input('category_id'))->max('sort_order') ?? 0;
+            $maxOrder                = SubCategory::max('sort_order') ?? 0;
             $subCategory->sort_order = $maxOrder + 1;
             $subCategory->status     = 1;
             $message                 = 'Sub Category created successfully.';
@@ -107,7 +105,7 @@ class SubCatogeryController extends Controller
         }
 
         $subCategory->save();
-        $this->resequenceOrders($subCategory->category_id);
+        $this->resequenceOrders();
 
         if (!empty($subCategory->image)) {
             $subCategory->image_url = asset(ltrim($subCategory->image, '/'));
@@ -155,7 +153,6 @@ class SubCatogeryController extends Controller
     public function destroy($id)
     {
         $subCategory = SubCategory::findOrFail($id);
-        $categoryId  = $subCategory->category_id;
 
         $imagePath = !empty($subCategory->image) ? ltrim($subCategory->image, '/') : null;
         if ($imagePath && file_exists(public_path($imagePath))) {
@@ -163,7 +160,7 @@ class SubCatogeryController extends Controller
         }
 
         $subCategory->delete();
-        $this->resequenceOrders($categoryId);
+        $this->resequenceOrders();
 
         return response()->json([
             'success' => true,
@@ -192,17 +189,14 @@ class SubCatogeryController extends Controller
      */
     public function reorder(Request $request, $id)
     {
-        $subCategory = SubCategory::findOrFail($id);
-        $this->resequenceOrders($subCategory->category_id);
+        $this->resequenceOrders();
 
-        // Refresh after resequence
-        $subCategory = SubCategory::findOrFail($id);
-        $direction   = $request->input('direction', 'up');
+        $direction    = $request->input('direction', 'up');
+        $subCategory  = SubCategory::findOrFail($id);
         $currentOrder = $subCategory->sort_order;
 
         if ($direction === 'up' && $currentOrder > 1) {
-            $previous = SubCategory::where('category_id', $subCategory->category_id)
-                ->where('sort_order', $currentOrder - 1)->first();
+            $previous = SubCategory::where('sort_order', $currentOrder - 1)->first();
             if ($previous) {
                 $subCategory->sort_order = $currentOrder - 1;
                 $previous->sort_order    = $currentOrder;
@@ -210,8 +204,7 @@ class SubCatogeryController extends Controller
                 $previous->saveQuietly();
             }
         } elseif ($direction === 'down') {
-            $next = SubCategory::where('category_id', $subCategory->category_id)
-                ->where('sort_order', $currentOrder + 1)->first();
+            $next = SubCategory::where('sort_order', $currentOrder + 1)->first();
             if ($next) {
                 $subCategory->sort_order = $currentOrder + 1;
                 $next->sort_order        = $currentOrder;

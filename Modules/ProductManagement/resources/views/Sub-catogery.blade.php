@@ -186,29 +186,44 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h4 class="fw-bold py-3 mb-0">Sub Categories</h4>
 
-        <button type="button" class="btn btn-primary" id="addSubCategoryModalBtn">
-            <i class="menu-icon tf-icons ti ti-plus"></i>Add Sub Category
-        </button>
-    </div>
+        <div class="d-flex gap-2">
 
-    {{-- Filter by Category --}}
-    <div class="card mb-3">
-        <div class="card-body py-3">
-            <div class="row align-items-center">
-                <div class="col-md-4">
-                    <label for="filter_category_id" class="form-label mb-1 fw-semibold">Filter by Category</label>
-                    <select id="filter_category_id" class="form-select select2" data-placeholder="All Categories">
-                        <option value="">All Categories</option>
-                        @foreach($categories as $cat)
-                            <option value="{{ $cat->id }}">{{ $cat->name_en }}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
+            <button type="button" class="btn btn-primary" id="addSubCategoryModalBtn">
+                <i class="menu-icon tf-icons ti ti-plus"></i>Add Sub Category
+            </button>
+
         </div>
     </div>
 
     <div class="card">
+        <!-- Filter Button Area inside Card -->
+        <div class="p-3 pb-0">
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
+                <i class="ti ti-filter me-1"></i> Filter
+            </button>
+        </div>
+
+        <!-- Collapsible Filter Section (Inside Card Box) -->
+        <div class="collapse" id="filterCollapse">
+            <div class="px-3 py-2">
+                <div class="card border shadow-sm my-2 bg-white">
+                    <div class="card-body mb-5">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 mb-4">
+                                <label for="filter_category_id" class="form-label mb-1 fw-semibold">Filter by Category</label>
+                                <select id="filter_category_id" class="form-select select2" data-placeholder="All Categories">
+                                    <option value="">All Categories</option>
+                                    @foreach($categories as $cat)
+                                        <option value="{{ $cat->id }}">{{ $cat->name_en }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="card-datatable table-responsive p-3">
             <table class="dt-advanced-search table customer-table" id="sub_category_table">
                 <thead>
@@ -253,11 +268,10 @@
                 <form id="addSubCategoryForm">
                     <input type="hidden" id="sub_category_id">
 
-                    {{-- Parent Category --}}
                     <div class="mb-3">
-                        <label for="modal_category_id" class="form-label fw-semibold">Parent Category <span class="text-danger">*</span></label>
+                        <label for="modal_category_id" class="form-label labe fw-semibold">Parent Category</label>
                         <select id="modal_category_id" name="category_id" class="form-select select2" data-placeholder="-- Select Category --" data-allow-clear="true">
-                            <option value="">-- Select Category --</option>
+                            <option value=""> Select Category </option>
                             @foreach($categories as $cat)
                                 <option value="{{ $cat->id }}">{{ $cat->name_en }}</option>
                             @endforeach
@@ -265,7 +279,6 @@
                         <span class="text-danger error-text category_id_error"></span>
                     </div>
 
-                    {{-- Image Upload --}}
                     <div class="mb-4">
                         <label class="form-label fw-semibold">Sub Category Image</label>
                         <div class="upload-wrapper">
@@ -302,7 +315,6 @@
                         </div>
                     </div>
 
-                    {{-- Names --}}
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="subCategoryName_en" class="form-label fw-semibold">Sub Category Name (EN) <span class="text-danger">*</span></label>
@@ -342,7 +354,7 @@
 
         // Initialize Select2 on modal dropdown (inside modal so use dropdownParent)
         $('#modal_category_id').select2({
-            placeholder: '-- Select Category --',
+            placeholder: 'Select Category',
             allowClear: true,
             width: '100%',
             dropdownParent: $('#addSubCategoryModal')

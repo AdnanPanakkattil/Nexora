@@ -45,6 +45,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // ========================= Child Categories ===============================================================================================
 
     Route::get('/child-categories', [ChildCategoriesController::class, 'index'])->name('child-categories');
+    Route::get('/product-management/child-categories', [ChildCategoriesController::class, 'getData'])->name('child-categories.data');
+    Route::post('/product-management/child-categories/store', [ChildCategoriesController::class, 'store'])->name('child-categories.store');
+    Route::get('/product-management/child-categories/edit/{id}', [ChildCategoriesController::class, 'edit'])->name('child-categories.edit');
+    Route::delete('/product-management/child-categories/delete/{id}', [ChildCategoriesController::class, 'destroy'])->name('child-categories.delete');
+    Route::post('/product-management/child-categories/status/{id}', [ChildCategoriesController::class, 'toggleStatus'])->name('child-categories.status');
+    Route::post('/product-management/child-categories/reorder/{id}', [ChildCategoriesController::class, 'reorder'])->name('child-categories.reorder');
 
     //===========================================================================================================================================
 

@@ -47,4 +47,12 @@ class SubCategory extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+    /**
+     * Has many ChildCategories.
+     */
+    public function childCategories()
+    {
+        return $this->hasMany(ChildCategory::class, 'sub_category_id');
+    }
 }
