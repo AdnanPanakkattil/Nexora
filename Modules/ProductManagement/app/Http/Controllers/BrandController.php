@@ -20,9 +20,7 @@ class BrandController extends Controller
      * Get DataTable Json Data (Pure Data - No HTML)
      */
     public function getData(Request $request)
-    
-
-
+    {
         return DataTables::of($brand)
                ->addColumn('brand_name', function ($row) {
                    return $row->brand_name;

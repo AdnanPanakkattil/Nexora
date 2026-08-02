@@ -87,7 +87,7 @@
       <!-- Unit -->
       <ul class="menu-sub">
         <li class="menu-item" id="Units_sub_menu">
-          <a href="" class="menu-link">
+          <a href="{{ route('units.list') }}" class="menu-link">
             <div data-i18n="Units">Units</div>
           </a>
         </li>

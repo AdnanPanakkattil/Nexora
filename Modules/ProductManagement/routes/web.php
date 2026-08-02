@@ -6,6 +6,7 @@ use Modules\ProductManagement\Http\Controllers\CategoriesController;
 use Modules\ProductManagement\Http\Controllers\ChildCategoriesController;
 use Modules\ProductManagement\Http\Controllers\ProductManagementController;
 use Modules\ProductManagement\Http\Controllers\SubCatogeryController;
+use Modules\ProductManagement\Http\Controllers\UnitController;
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
@@ -62,6 +63,37 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/product-management/brand', [BrandController::class, 'getData'])->name('brand.data');
     Route::post('/product-management/brand/store', [BrandController::class, 'store'])->name('brand.store');
     
+    //===========================================================================================================================================
+
+    //==================================== Unit ================================================================================================
+
+    // Unit list page return ചെയ്യുന്നു → UnitController@index
+    Route::get('/units', [UnitController::class, 'index'])->name('units.list');
+
+    // DataTable-ന്റെ AJAX request handle ചെയ്യുന്നു → UnitController@getData
+    // Input: DataTable AJAX request | Output: JSON (id, name_en, name_ar, short_name, status, sort_order)
+    Route::get('/product-management/units', [UnitController::class, 'getData'])->name('units.data');
+
+    // Unit create or update ചെയ്യുന്നു → UnitController@store
+    // Input: unitName_en, unitName_ar, short_name, unit_id (optional for update)
+    Route::post('/product-management/units/store', [UnitController::class, 'store'])->name('units.store');
+
+    // Edit modal-ന് unit data return ചെയ്യുന്നു → UnitController@edit
+    // Input: $id (URL parameter) | Output: JSON unit data
+    Route::get('/product-management/units/edit/{id}', [UnitController::class, 'edit'])->name('units.edit');
+
+    // Unit delete ചെയ്യുന്നു → UnitController@destroy
+    // Input: $id (URL parameter) | Output: JSON success message
+    Route::delete('/product-management/units/delete/{id}', [UnitController::class, 'destroy'])->name('units.delete');
+
+    // Status Active/Inactive toggle ചെയ്യുന്നു → UnitController@toggleStatus
+    // Input: $id (URL parameter) | Output: JSON { status: 0|1 }
+    Route::post('/product-management/units/status/{id}', [UnitController::class, 'toggleStatus'])->name('units.status');
+
+    // Sort order up/down ചെയ്യുന്നു → UnitController@reorder
+    // Input: $id (URL parameter), direction (up/down in request body)
+    Route::post('/product-management/units/reorder/{id}', [UnitController::class, 'reorder'])->name('units.reorder');
+
     //===========================================================================================================================================
 
 });
