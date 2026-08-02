@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\ProductManagement\Http\Controllers\BrandController;
 use Modules\ProductManagement\Http\Controllers\CategoriesController;
 use Modules\ProductManagement\Http\Controllers\ChildCategoriesController;
 use Modules\ProductManagement\Http\Controllers\ProductManagementController;
@@ -52,6 +53,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/product-management/child-categories/status/{id}', [ChildCategoriesController::class, 'toggleStatus'])->name('child-categories.status');
     Route::post('/product-management/child-categories/reorder/{id}', [ChildCategoriesController::class, 'reorder'])->name('child-categories.reorder');
 
+    //===========================================================================================================================================
+
+
+    //==================================== Brand ===============================================================================================
+
+    Route::get('/brand', [BrandController::class, 'index'])->name('brand');
+    Route::get('/product-management/brand', [BrandController::class, 'getData'])->name('brand.data');
+    Route::post('/peoduct-management/brand/store', [BrandController::class, 'store'])->name('brand.store');
+    
     //===========================================================================================================================================
 
 });

@@ -77,8 +77,8 @@
 
       <!-- Brand -->
       <ul class="menu-sub">
-        <li class="menu-item" id="sub_catogery_sub_menu">
-          <a href="" class="menu-link">
+        <li class="menu-item" id="Brands_sub_menu">
+          <a href="{{ route('brand') }}" class="menu-link">
             <div data-i18n="Brands">Brands</div>
           </a>
         </li>
@@ -86,7 +86,7 @@
 
       <!-- Unit -->
       <ul class="menu-sub">
-        <li class="menu-item" id="sub_catogery_sub_menu">
+        <li class="menu-item" id="Units_sub_menu">
           <a href="" class="menu-link">
             <div data-i18n="Units">Units</div>
           </a>
