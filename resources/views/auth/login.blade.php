@@ -3,11 +3,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
         :root {
-            --mu-primary: #AD7BC7;
-            --mu-primary-dark: #8E50B7;
-            --mu-primary-hover: #985DB2;
-            --mu-primary-glow: rgba(173, 123, 199, 0.28);
-            --mu-primary-soft: rgba(173, 123, 199, 0.12);
+            --mu-primary: #a47bc8;
+            --mu-primary-dark: #7d4eab;
+            --mu-primary-hover: #9268bc;
+            --mu-primary-glow: rgba(164, 123, 200, 0.28);
+            --mu-primary-soft: rgba(164, 123, 200, 0.12);
             --mu-text: #2F2B3D;
             --mu-muted: #9291A5;
             --mu-border: #E2DDEF;
@@ -44,7 +44,7 @@
             flex: 0 0 50%;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(155deg, #1A1528 0%, #2B1A44 50%, #3D1F5C 100%);
+            background: linear-gradient(155deg, #1A1528 0%, #271a42 50%, #38205a 100%);
             display: flex;
             flex-direction: column;
             padding: 44px 52px;
@@ -69,8 +69,8 @@
             opacity: 0.30;
             pointer-events: none;
         }
-        .nx-blob-1 { width: 400px; height: 400px; background: radial-gradient(#AD7BC7, #5A1A8A); top: -120px; right: -80px; animation: bFloat 9s ease-in-out infinite alternate; }
-        .nx-blob-2 { width: 280px; height: 280px; background: radial-gradient(#C89BE0, #7E3FA7); bottom: 60px; left: -50px; animation: bFloat 7s ease-in-out infinite alternate-reverse; }
+        .nx-blob-1 { width: 400px; height: 400px; background: radial-gradient(#a47bc8, #521882); top: -120px; right: -80px; animation: bFloat 9s ease-in-out infinite alternate; }
+        .nx-blob-2 { width: 280px; height: 280px; background: radial-gradient(#c097de, #7340a3); bottom: 60px; left: -50px; animation: bFloat 7s ease-in-out infinite alternate-reverse; }
 
         @keyframes bFloat {
             from { transform: translate(0, 0) scale(1); }
@@ -140,8 +140,8 @@
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            background: rgba(173,123,199,0.20);
-            border: 1px solid rgba(173,123,199,0.40);
+            background: rgba(164,123,200,0.20);
+            border: 1px solid rgba(164,123,200,0.40);
             border-radius: 100px;
             padding: 5px 14px;
             font-size: 12px;
@@ -163,7 +163,7 @@
         }
 
         .nx-h1 span {
-            background: linear-gradient(135deg, #E4BAF5, #AD7BC7);
+            background: linear-gradient(135deg, #ddb4f2, #a47bc8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -193,14 +193,14 @@
 
         .nx-feat:hover {
             background: rgba(255,255,255,0.09);
-            border-color: rgba(173,123,199,0.35);
+            border-color: rgba(164,123,200,0.35);
         }
 
         .nx-feat-icon {
             width: 40px;
             height: 40px;
             min-width: 40px;
-            background: rgba(173,123,199,0.22);
+            background: rgba(164,123,200,0.22);
             border-radius: 11px;
             display: flex;
             align-items: center;
@@ -261,8 +261,8 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse at 75% 15%, rgba(173,123,199,0.10) 0%, transparent 55%),
-                radial-gradient(ellipse at 25% 85%, rgba(173,123,199,0.07) 0%, transparent 45%);
+                radial-gradient(ellipse at 75% 15%, rgba(164,123,200,0.10) 0%, transparent 55%),
+                radial-gradient(ellipse at 25% 85%, rgba(164,123,200,0.07) 0%, transparent 45%);
             pointer-events: none;
         }
 
@@ -492,7 +492,7 @@
             gap: 8px;
             width: 100%;
             height: 52px;
-            background: linear-gradient(135deg, #B682CF 0%, #8E50B7 100%);
+            background: linear-gradient(135deg, #b07ed0 0%, #7d4eab 100%);
             border: none;
             border-radius: 12px;
             color: #fff;
@@ -501,18 +501,18 @@
             font-family: inherit;
             letter-spacing: 0.2px;
             cursor: pointer;
-            box-shadow: 0 6px 22px rgba(142,80,183,0.42);
+            box-shadow: 0 6px 22px rgba(125,78,171,0.42);
             transition: all 0.22s ease;
             margin-bottom: 22px;
         }
 
         .nx-btn:hover {
-            background: linear-gradient(135deg, #A56DC0 0%, #7E3FA7 100%);
-            box-shadow: 0 8px 30px rgba(142,80,183,0.52);
+            background: linear-gradient(135deg, #9a6dbc 0%, #6e3a9a 100%);
+            box-shadow: 0 8px 30px rgba(125,78,171,0.52);
             transform: translateY(-2px);
         }
 
-        .nx-btn:active { transform: translateY(0); box-shadow: 0 4px 14px rgba(142,80,183,0.35); }
+        .nx-btn:active { transform: translateY(0); box-shadow: 0 4px 14px rgba(125,78,171,0.35); }
 
         /* Divider */
         .nx-divider {
@@ -559,7 +559,7 @@
 
         .nx-social-btn:hover {
             background: #F5F2FC;
-            border-color: rgba(173,123,199,0.38);
+            border-color: rgba(164,123,200,0.38);
             color: var(--mu-text);
             transform: translateY(-2px);
             box-shadow: 0 4px 14px rgba(0,0,0,0.06);
