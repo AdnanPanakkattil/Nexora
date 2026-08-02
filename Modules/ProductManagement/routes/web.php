@@ -59,10 +59,29 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     //==================================== Brand ===============================================================================================
 
+    // Render Brand management page view → BrandController@index
     Route::get('/brand', [BrandController::class, 'index'])->name('brand');
+
+    // Fetch JSON list for DataTables → BrandController@getData
+    // Input: DataTable AJAX request | Output: JSON (id, brandName_en, brandName_ar, status)
     Route::get('/product-management/brand', [BrandController::class, 'getData'])->name('brand.data');
+
+    // Create or Update Brand record → BrandController@store
+    // Input: brand_id (optional), brandName_en, brandName_ar | Output: JSON success response
     Route::post('/product-management/brand/store', [BrandController::class, 'store'])->name('brand.store');
-    
+
+    // Fetch single brand details for editing → BrandController@edit
+    // Input: $id (URL parameter) | Output: JSON brand data
+    Route::get('/product-management/brand/edit/{id}', [BrandController::class, 'edit'])->name('brand.edit');
+
+    // Soft delete Brand record (is_deleted = 1) → BrandController@destroy
+    // Input: $id (URL parameter) | Output: JSON success message
+    Route::delete('/product-management/brand/delete/{id}', [BrandController::class, 'destroy'])->name('brand.delete');
+
+    // Toggle active/inactive status → BrandController@toggleStatus
+    // Input: $id (URL parameter) | Output: JSON updated status
+    Route::post('/product-management/brand/status/{id}', [BrandController::class, 'toggleStatus'])->name('brand.status');
+
     //===========================================================================================================================================
 
     //==================================== Unit ================================================================================================

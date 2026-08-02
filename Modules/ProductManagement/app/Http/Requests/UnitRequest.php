@@ -42,7 +42,7 @@ class UnitRequest extends FormRequest
         return [
             'unitName_en' => 'required|string|max:255',
             'unitName_ar' => 'required|string|max:255',
-            'short_name'  => 'nullable|string|max:50',
+            'short_name' => 'nullable|string|max:50',
         ];
     }
 
@@ -56,7 +56,7 @@ class UnitRequest extends FormRequest
         return [
             'unitName_en.required' => 'Unit Name in English is required.',
             'unitName_ar.required' => 'Unit Name in Arabic is required.',
-            'short_name.max'       => 'Short name must not exceed 50 characters.',
+            'short_name.max' => 'Short name must not exceed 50 characters.',
         ];
     }
 }
