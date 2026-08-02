@@ -319,8 +319,9 @@ $(function () {
                                 icon: 'success',
                                 title: 'Deleted!',
                                 text: response.message,
-                                timer: 2000,
-                                showConfirmButton: false
+                                showConfirmButton: true,
+                                confirmButtonText: 'OK',
+                                buttonsStyling: false
                             });
                         }
                     },
