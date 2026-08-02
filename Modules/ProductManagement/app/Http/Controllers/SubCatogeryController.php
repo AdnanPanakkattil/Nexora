@@ -17,7 +17,7 @@ class SubCatogeryController extends Controller
      */
     public function index()
     {
-        $categories = Category::where('status', 1)->orderBy('sort_order')->get();
+        $categories = Category::orderBy('sort_order', 'asc')->get();
         return view('productmanagement::Sub-catogery', compact('categories'));
     }
 
@@ -44,12 +44,10 @@ class SubCatogeryController extends Controller
     {
         $this->resequenceOrders();
 
-        $categoryId = $request->input('category_id');
-
         $query = SubCategory::with('category')->orderBy('sort_order', 'asc')->orderBy('id', 'asc');
 
-        if ($categoryId) {
-            $query->where('category_id', $categoryId);
+        if ($request->filled('category_id')) {
+            $query->where('category_id', $request->input('category_id'));
         }
 
         return DataTables::of($query)

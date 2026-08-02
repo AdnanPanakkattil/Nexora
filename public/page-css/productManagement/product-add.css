@@ -1,3 +1,5 @@
+/* Product Add Page Custom Styles */
+
 #loader-overlay {
     display: none;
     position: fixed;
@@ -15,4 +17,306 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
+}
+
+.product-add-container {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding-bottom: 2rem;
+}
+
+.product-card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.25rem;
+}
+
+.step-badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #a47bc8;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.section-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #2b2c40;
+    margin: 0;
+}
+
+.form-label-custom {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: #43495b;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.form-label-custom .text-danger {
+    color: #ea5455 !important;
+}
+
+.form-control-custom,
+.form-select-custom {
+    border: 1px solid #d9dee3;
+    border-radius: 8px;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.875rem;
+    color: #566a7f;
+    background-color: #fff;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control-custom:focus,
+.form-select-custom:focus {
+    border-color: #a47bc8;
+    box-shadow: 0 0 0 0.2rem rgba(110, 68, 255, 0.15);
+    outline: 0;
+}
+
+.input-caption {
+    font-size: 0.75rem;
+    color: #8592a3;
+    margin-top: 4px;
+    display: block;
+}
+
+.char-counter {
+    font-size: 0.75rem;
+    color: #a1acb8;
+    text-align: right;
+    margin-top: 4px;
+}
+
+/* Rich Text Editor Mockup / Container */
+.editor-container {
+    border: 1px solid #d9dee3;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.editor-toolbar {
+    background: #fafafa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.editor-toolbar select {
+    border: 1px solid #d9dee3;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 0.8rem;
+    background: #fff;
+}
+
+.editor-btn {
+    background: transparent;
+    border: none;
+    color: #566a7f;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editor-btn:hover {
+    background: #e9ecef;
+    color: #a47bc8;
+}
+
+.editor-content {
+    min-height: 100px;
+    padding: 12px;
+    font-size: 0.875rem;
+    color: #566a7f;
+    outline: none;
+}
+
+.editor-content[contenteditable=true]:empty:before {
+    content: attr(placeholder);
+    color: #a1acb8;
+}
+
+/* Upload Area */
+.upload-box {
+    border: 2px dashed #d9dee3;
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.upload-box:hover {
+    border-color: #a47bc8;
+    background: #f5f3ff;
+}
+
+.upload-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #ede9fe;
+    color: #a47bc8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px auto;
+    font-size: 1.25rem;
+}
+
+.upload-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #2b2c40;
+    margin-bottom: 2px;
+}
+
+.upload-subtitle {
+    font-size: 0.75rem;
+    color: #8592a3;
+}
+
+.gallery-grid {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.gallery-preview-item {
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c4cdd5;
+    font-size: 1.2rem;
+}
+
+.gallery-add-item {
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
+    border: 1px dashed #a47bc8;
+    background: #f5f3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a47bc8;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Toggle item in settings */
+.setting-toggle-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.setting-toggle-item:not(:last-child) {
+    border-bottom: 1px solid #f1f3f5;
+}
+
+.setting-label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #43495b;
+}
+
+.toggle-status-text {
+    font-size: 0.8rem;
+    color: #8592a3;
+    margin-left: 8px;
+}
+
+/* Custom Switch */
+.form-switch .form-check-input {
+    width: 2.5em;
+    height: 1.3em;
+    cursor: pointer;
+}
+
+.form-switch .form-check-input:checked {
+    background-color: #a47bc8;
+    border-color: #a47bc8;
+}
+
+.currency-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 12px;
+    color: #8592a3;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.currency-input-group .form-control-custom {
+    padding-left: 28px;
+}
+
+.btn-primary-purple {
+    background-color: #a47bc8;
+    border-color: #a47bc8;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.55rem 1.25rem;
+    border-radius: 8px;
+}
+
+.btn-primary-purple:hover {
+    background-color: #5b35e0;
+    border-color: #5b35e0;
+    color: #ffffff;
+}
+
+.btn-outline-cancel {
+    background: #ffffff;
+    border: 1px solid #d9dee3;
+    color: #566a7f;
+    font-weight: 600;
+    padding: 0.55rem 1.25rem;
+    border-radius: 8px;
+}
+
+.btn-outline-cancel:hover {
+    background: #f8f9fa;
+    color: #43495b;
 }

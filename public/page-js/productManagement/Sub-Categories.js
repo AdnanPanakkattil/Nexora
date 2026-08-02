@@ -113,8 +113,8 @@ $(function () {
     });
 
     // Filter by category dropdown reloads table
-    $("#filter_category_id").on("change", function () {
-        table.ajax.reload(null, false);
+    $(document).on("change change.select2", "#filter_category_id", function () {
+        table.draw();
     });
 
     // ─── Image Upload & Preview ───────────────────────────────────────────────────

@@ -146,8 +146,8 @@ $(function () {
     });
 
     // Reload DataTables when user changes the Sub Category filter dropdown
-    $("#filter_sub_category_id").on("change", function () {
-        table.ajax.reload(null, false);
+    $(document).on("change change.select2", "#filter_sub_category_id", function () {
+        table.draw();
     });
 
     // ----------------------------------------------------------------------

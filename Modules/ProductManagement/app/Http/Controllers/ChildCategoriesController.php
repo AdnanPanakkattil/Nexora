@@ -20,7 +20,6 @@ class ChildCategoriesController extends Controller
     {
         // Fetch all active sub-categories with parent category for dropdown select inputs
         $subCategories = SubCategory::with('category')
-            ->where('status', 1)
             ->orderBy('sort_order', 'asc')
             ->get();
 
@@ -58,8 +57,8 @@ class ChildCategoriesController extends Controller
             ->orderBy('sort_order', 'asc')
             ->orderBy('id', 'asc');
 
-        if ($subCategoryId) {
-            $query->where('sub_category_id', $subCategoryId);
+        if ($request->filled('sub_category_id')) {
+            $query->where('sub_category_id', $request->input('sub_category_id'));
         }
 
         return DataTables::of($query)
