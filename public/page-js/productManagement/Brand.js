@@ -23,11 +23,11 @@ $(function () {
 
     //================= Brand Data Table ==================================================
 
-    var brandDataTable = $("#brandDataTable").DataTable({
+    var brandDataTable = $("#brand_table").DataTable({
         processing: true,
         serverSide: true,
         ajax: {
-            url: "/product-management/brand-data",
+            url: "/product-management/brand",
             type: "GET",
         },
         columns: [
@@ -79,5 +79,8 @@ $(function () {
     });
 
     //=====================================================================================
+
+    
+
 
 });

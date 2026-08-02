@@ -60,7 +60,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/brand', [BrandController::class, 'index'])->name('brand');
     Route::get('/product-management/brand', [BrandController::class, 'getData'])->name('brand.data');
-    Route::post('/peoduct-management/brand/store', [BrandController::class, 'store'])->name('brand.store');
+    Route::post('/product-management/brand/store', [BrandController::class, 'store'])->name('brand.store');
     
     //===========================================================================================================================================
 

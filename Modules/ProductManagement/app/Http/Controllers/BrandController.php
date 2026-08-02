@@ -4,6 +4,7 @@ namespace Modules\ProductManagement\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class BrandController extends Controller
 {
@@ -15,6 +16,20 @@ class BrandController extends Controller
         return view('productmanagement::brand');
     }
 
+    /***
+     * Get DataTable Json Data (Pure Data - No HTML)
+     */
+    public function getData(Request $request)
+    
+
+
+        return DataTables::of($brand)
+               ->addColumn('brand_name', function ($row) {
+                   return $row->brand_name;
+               })
+            ->make(true);
+    }
+    
     /**
      * Show the form for creating a new resource.
      */
