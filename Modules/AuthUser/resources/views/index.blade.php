@@ -99,21 +99,64 @@
     </div>
 </div>
 
+@push('styles')
+<style>
+    .role-select-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        padding: 20px 10px;
+    }
+
+    .role-select-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 230px;
+        padding: 12px 24px;
+        background-color: #a47bc8;
+        color: #ffffff !important;
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.25s ease-in-out;
+        border: none;
+    }
+
+    .role-select-btn:hover {
+        background-color: #a47bc8;
+        color: #ffffff !important;
+    }
+</style>
+@endpush
+
 <!-- Add User Offcanvas -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="addUserOffcanvas" aria-labelledby="addUserOffcanvasLabel">
-  <div class="offcanvas-header border-bottom">
-    <h5 id="addUserOffcanvasLabel" class="offcanvas-title">Select User Role</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div class="d-flex flex-column gap-2 w-65 mx-auto">
-      <a href="{{ route('authuser.super-admin') }}" class="btn btn-primary text-center">Super Admin</a>
-      <a href="#" class="btn btn-primary text-center">Manager</a>
-      <a href="#" class="btn btn-primary text-center">Inventory Manager</a>
-      <a href="#" class="btn btn-primary text-center">Sales Manager</a>
-      <a href="#" class="btn btn-primary text-center">Support</a>
+    <div class="offcanvas-header border-bottom">
+        <h5 id="addUserOffcanvasLabel" class="offcanvas-title fw-bold">Select User Role</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-  </div>
+    <div class="offcanvas-body">
+        <div class="role-select-container">
+            <a href="#" class="role-select-btn">Super Admin</a>
+            <a href="#" class="role-select-btn">Admin</a>
+            <a href="#" class="role-select-btn">Vendor Manager</a>
+            <a href="#" class="role-select-btn">Product Manager</a>
+            <a href="#" class="role-select-btn">Order Manager</a>
+            <a href="#" class="role-select-btn">Inventory Manager</a>
+            <a href="#" class="role-select-btn">Customer Support</a>
+            <a href="#" class="role-select-btn">Finance</a>
+            <a href="#" class="role-select-btn">Marketing</a>
+            <a href="#" class="role-select-btn">Content Manager</a>
+            <a href="#" class="role-select-btn">Report Manager</a>
+            <a href="#" class="role-select-btn">Vendor</a>
+            <a href="#" class="role-select-btn">Vendor Staff</a>
+        </div>
+    </div>
 </div>
 
 @endsection
